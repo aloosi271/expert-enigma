@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Solo Leveling Dashboard</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        
+        .loading-container {
+            text-align: center;
+            position: relative;
+        }
+        
+        .logo {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 2rem;
+            background: linear-gradient(45deg, #00d4ff, #ff6b6b, #4ecdc4);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientShift 3s ease-in-out infinite;
+        }
+        
+        .loading-text {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.8;
+        }
+        
+        .loading-bar {
+            width: 300px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 2px;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+        
+        .loading-progress {
+            height: 100%;
+            background: linear-gradient(90deg, #00d4ff, #ff6b6b);
+            border-radius: 2px;
+            animation: loadingAnimation 2s ease-in-out;
+        }
+        
+        .system-message {
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            opacity: 0.6;
+            animation: fadeInOut 2s ease-in-out infinite;
+        }
+        
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        @keyframes loadingAnimation {
+            0% { width: 0%; }
+            100% { width: 100%; }
+        }
+        
+        @keyframes fadeInOut {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.8; }
+        }
+    </style>
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fsololevel3669back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.8"></script>
+</head>
+<body>
+    <div class="loading-container">
+        <div class="logo">SOLO LEVELING</div>
+        <div class="loading-text">Initializing Dashboard System...</div>
+        <div class="loading-bar">
+            <div class="loading-progress"></div>
+        </div>
+        <div class="system-message">System Status: Online | Redirecting to Main Dashboard</div>
+    </div>
+
+    <script>
+        // Simulate loading and redirect to main dashboard
+        setTimeout(function() {
+            window.location.href = 'pages/main_dashboard.html';
+        }, 2500);
+        
+        // Add some dynamic loading messages
+        const messages = [
+            "Loading Hunter Profile...",
+            "Connecting to System...",
+            "Initializing Dashboard...",
+            "Almost Ready..."
+        ];
+        
+        let messageIndex = 0;
+        const loadingText = document.querySelector('.loading-text');
+        
+        const messageInterval = setInterval(function() {
+            if (messageIndex < messages.length) {
+                loadingText.textContent = messages[messageIndex];
+                messageIndex++;
+            } else {
+                clearInterval(messageInterval);
+            }
+        }, 600);
+    </script>
+<script id="dhws-dataInjector" src="/public/dhws-data-injector.js"></script>
+</body>
+</html>

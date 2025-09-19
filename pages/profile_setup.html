@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile Setup - Digital Hunter's Guild</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fsololevel3669back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.8"></script>
+</head>
+<body class="bg-background text-text-primary font-inter overflow-x-hidden">
+    <!-- Navigation Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-surface/90 backdrop-blur-md border-b border-white/10">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-gradient-to-br from-secondary to-accent rounded-lg flex items-center justify-center">
+                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z"/>
+                        </svg>
+                    </div>
+                    <h1 class="text-xl font-cairo font-bold text-gradient">Digital Hunter's Guild</h1>
+                </div>
+                
+                <!-- Navigation Links -->
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="main_dashboard.html" class="text-text-secondary hover:text-secondary transition-colors">Dashboard</a>
+                    <a href="profile_setup.html" class="text-secondary font-medium border-b-2 border-secondary pb-1">Profile</a>
+                    <a href="detective_academy.html" class="text-text-secondary hover:text-secondary transition-colors">Detective Academy</a>
+                    <a href="progress_analytics.html" class="text-text-secondary hover:text-secondary transition-colors">Analytics</a>
+                    <a href="achievement_gallery.html" class="text-text-secondary hover:text-secondary transition-colors">Achievements</a>
+                    <a href="system_settings.html" class="text-text-secondary hover:text-secondary transition-colors">Settings</a>
+                </div>
+
+                <!-- Progress Indicator -->
+                <div class="flex items-center space-x-4">
+                    <div class="hidden md:flex items-center space-x-2">
+                        <span class="text-sm text-text-secondary">Setup Progress</span>
+                        <div class="w-24 bg-surface-light rounded-full h-2">
+                            <div id="setup-progress" class="bg-gradient-to-r from-secondary to-accent h-2 rounded-full transition-all duration-500" style="width: 25%"></div>
+                        </div>
+                        <span id="progress-text" class="text-sm text-accent font-semibold">25%</span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Profile Setup Content -->
+    <main class="pt-20 min-h-screen">
+        <!-- Welcome Banner -->
+        <section class="container mx-auto px-6 py-8">
+            <div class="text-center mb-8">
+                <h2 class="text-4xl font-cairo font-bold mb-4 text-gradient">Create Your Hunter Identity</h2>
+                <p class="text-text-secondary text-lg max-w-2xl mx-auto">Transform into a legendary digital hunter. Every great journey begins with defining who you are and who you aspire to become.</p>
+            </div>
+        </section>
+
+        <!-- Setup Wizard Container -->
+        <section class="container mx-auto px-6 pb-8">
+            <div class="max-w-4xl mx-auto">
+                
+                <!-- Step 1: Photo Upload & Basic Info -->
+                <div id="step-1" class="setup-step active">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <!-- Photo Upload Section -->
+                        <div class="card p-8">
+                            <h3 class="text-2xl font-cairo font-semibold mb-6 text-center">Hunter Avatar</h3>
+                            
+                            <div class="relative flex items-center justify-center mb-6">
+                                <!-- Hexagonal Frame with Aura Effects -->
+                                <div class="relative">
+                                    <svg class="w-48 h-48" viewBox="0 0 200 200">
+                                        <!-- Outer Aura Ring -->
+                                        <polygon points="100,10 170,50 170,130 100,170 30,130 30,50" fill="none" stroke="url(#auraGradient)" stroke-width="3" class="animate-pulse-slow"/>
+                                        
+                                        <!-- Inner Frame -->
+                                        <polygon points="100,20 160,55 160,125 100,160 40,125 40,55" fill="rgba(30,30,30,0.8)" stroke="rgba(0,180,255,0.5)" stroke-width="2"/>
+                                        
+                                        <!-- Clip Path for Image -->
+                                        <defs>
+                                            <clipPath id="hexClip">
+                                                <polygon points="100,25 155,57.5 155,122.5 100,155 45,122.5 45,57.5"/>
+                                            </clipPath>
+                                            <linearGradient id="auraGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                <stop offset="0%" style="stop-color:#00b4ff;stop-opacity:1"/>
+                                                <stop offset="50%" style="stop-color:#ffd700;stop-opacity:0.8"/>
+                                                <stop offset="100%" style="stop-color:#00b4ff;stop-opacity:1"/>
+                                            </linearGradient>
+                                        </defs>
+                                        
+                                        <!-- Profile Image -->
+                                        <image id="profile-image" href="https://images.pexels.com/photos/1040880/pexels-photo-1040880.jpeg?auto=compress&cs=tinysrgb&w=300" x="45" y="57.5" width="110" height="65" clip-path="url(#hexClip)" preserveAspectRatio="xMidYMid slice"/>
+                                    </svg>
+                                    
+                                    <!-- Upload Button Overlay -->
+                                    <button id="upload-btn" class="absolute inset-0 flex items-center justify-center bg-black/50 rounded-full opacity-0 hover:opacity-100 transition-opacity duration-300">
+                                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/>
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                        </svg>
+                                    </button>
+                                    <input type="file" id="photo-upload" class="hidden" accept="image/*" />
+                                </div>
+                            </div>
+                            
+                            <!-- Aura Customization -->
+                            <div class="space-y-4">
+                                <h4 class="text-lg font-cairo font-medium text-center">Aura Customization</h4>
+                                <div class="grid grid-cols-3 gap-3">
+                                    <button class="aura-option active w-full p-3 rounded-lg border-2 border-secondary bg-secondary/20 text-secondary text-sm font-medium transition-colors" data-aura="electric">
+                                        Electric Blue
+                                    </button>
+                                    <button class="aura-option w-full p-3 rounded-lg border-2 border-accent/50 bg-accent/10 text-accent text-sm font-medium hover:border-accent hover:bg-accent/20 transition-colors" data-aura="golden">
+                                        Golden Radiance
+                                    </button>
+                                    <button class="aura-option w-full p-3 rounded-lg border-2 border-success/50 bg-success/10 text-success text-sm font-medium hover:border-success hover:bg-success/20 transition-colors" data-aura="nature">
+                                        Nature's Embrace
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Basic Information -->
+                        <div class="card p-8">
+                            <h3 class="text-2xl font-cairo font-semibold mb-6">Hunter Details</h3>
+                            
+                            <div class="space-y-6">
+                                <div>
+                                    <label class="block text-sm font-medium text-text-secondary mb-2">Hunter Name</label>
+                                    <input type="text" id="hunter-name" placeholder="Enter your hunter name..." class="w-full bg-surface-light border border-white/10 rounded-lg px-4 py-3 text-text-primary focus:outline-none focus:border-secondary/50 transition-colors" />
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-sm font-medium text-text-secondary mb-2">Real Name (Optional)</label>
+                                    <input type="text" id="real-name" placeholder="Your real name..." class="w-full bg-surface-light border border-white/10 rounded-lg px-4 py-3 text-text-primary focus:outline-none focus:border-secondary/50 transition-colors" />
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-sm font-medium text-text-secondary mb-2">Age Range</label>
+                                    <select id="age-range" class="w-full bg-surface-light border border-white/10 rounded-lg px-4 py-3 text-text-primary focus:outline-none focus:border-secondary/50 transition-colors">
+                                        <option value>Select age range...</option>
+                                        <option value="16-20">16-20 years</option>
+                                        <option value="21-25">21-25 years</option>
+                                        <option value="26-30">26-30 years</option>
+                                        <option value="31-35">31-35 years</option>
+                                        <option value="36+">36+ years</option>
+                                    </select>
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-sm font-medium text-text-secondary mb-2">Primary Language</label>
+                                    <div class="grid grid-cols-2 gap-3">
+                                        <button class="language-option active w-full p-3 rounded-lg border-2 border-secondary bg-secondary/20 text-secondary text-sm font-medium transition-colors" data-lang="en">
+                                            English
+                                        </button>
+                                        <button class="language-option w-full p-3 rounded-lg border-2 border-white/20 bg-surface-light text-text-secondary hover:border-secondary/50 hover:text-secondary transition-colors" data-lang="ar">
+                                            العربية
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex justify-end mt-8">
+                        <button id="next-step-1" class="btn-secondary px-8 py-3 rounded-lg font-rajdhani font-semibold">
+                            Continue to Stats
+                            <svg class="w-4 h-4 ml-2 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 2: Stat Initialization -->
+                <div id="step-2" class="setup-step hidden">
+                    <div class="card p-8">
+                        <h3 class="text-2xl font-cairo font-semibold mb-6 text-center">Initialize Your Core Stats</h3>
+                        <p class="text-text-secondary text-center mb-8">Distribute 100 points across your six core attributes. Each stat influences different aspects of your hunter journey.</p>
+                        
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                            <!-- Stat Sliders -->
+                            <div class="space-y-6">
+                                <!-- Intelligence -->
+                                <div class="stat-container">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <label class="text-sm font-medium text-secondary flex items-center">
+                                            <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                            </svg>
+                                            Intelligence
+                                        </label>
+                                        <span id="int-value" class="text-accent font-bold">15</span>
+                                    </div>
+                                    <input type="range" id="intelligence" min="5" max="30" value="15" class="stat-slider w-full" />
+                                    <p class="text-xs text-text-muted mt-1">Problem-solving, learning speed, detective work</p>
+                                </div>
+                                
+                                <!-- Strength -->
+                                <div class="stat-container">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <label class="text-sm font-medium text-warning flex items-center">
+                                            <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                            </svg>
+                                            Strength
+                                        </label>
+                                        <span id="str-value" class="text-accent font-bold">15</span>
+                                    </div>
+                                    <input type="range" id="strength" min="5" max="30" value="15" class="stat-slider w-full" />
+                                    <p class="text-xs text-text-muted mt-1">Physical power, workout intensity, resilience</p>
+                                </div>
+                                
+                                <!-- Endurance -->
+                                <div class="stat-container">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <label class="text-sm font-medium text-success flex items-center">
+                                            <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                            </svg>
+                                            Endurance
+                                        </label>
+                                        <span id="end-value" class="text-accent font-bold">15</span>
+                                    </div>
+                                    <input type="range" id="endurance" min="5" max="30" value="15" class="stat-slider w-full" />
+                                    <p class="text-xs text-text-muted mt-1">Stamina, consistency, long-term persistence</p>
+                                </div>
+                            </div>
+                            
+                            <div class="space-y-6">
+                                <!-- Focus -->
+                                <div class="stat-container">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <label class="text-sm font-medium text-purple-400 flex items-center">
+                                            <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                            </svg>
+                                            Focus
+                                        </label>
+                                        <span id="foc-value" class="text-accent font-bold">15</span>
+                                    </div>
+                                    <input type="range" id="focus" min="5" max="30" value="15" class="stat-slider w-full" />
+                                    <p class="text-xs text-text-muted mt-1">Concentration, meditation, deep work ability</p>
+                                </div>
+                                
+                                <!-- Creativity -->
+                                <div class="stat-container">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <label class="text-sm font-medium text-pink-400 flex items-center">
+                                            <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                            </svg>
+                                            Creativity
+                                        </label>
+                                        <span id="cre-value" class="text-accent font-bold">15</span>
+                                    </div>
+                                    <input type="range" id="creativity" min="5" max="30" value="15" class="stat-slider w-full" />
+                                    <p class="text-xs text-text-muted mt-1">Innovation, artistic expression, problem-solving</p>
+                                </div>
+                                
+                                <!-- Discipline -->
+                                <div class="stat-container">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <label class="text-sm font-medium text-error flex items-center">
+                                            <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                            </svg>
+                                            Discipline
+                                        </label>
+                                        <span id="dis-value" class="text-accent font-bold">15</span>
+                                    </div>
+                                    <input type="range" id="discipline" min="5" max="30" value="15" class="stat-slider w-full" />
+                                    <p class="text-xs text-text-muted mt-1">Self-control, habit formation, willpower</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Points Counter -->
+                        <div class="text-center mt-8">
+                            <div class="inline-flex items-center space-x-4 bg-surface-light rounded-lg px-6 py-3">
+                                <span class="text-text-secondary">Points Remaining:</span>
+                                <span id="points-remaining" class="text-2xl font-bold text-accent">10</span>
+                                <span class="text-text-secondary">/ 100</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex justify-between mt-8">
+                        <button id="prev-step-2" class="bg-surface-light text-text-secondary border border-white/20 px-8 py-3 rounded-lg font-rajdhani font-semibold hover:bg-surface hover:text-text-primary transition-colors">
+                            <svg class="w-4 h-4 mr-2 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                            </svg>
+                            Back
+                        </button>
+                        <button id="next-step-2" class="btn-secondary px-8 py-3 rounded-lg font-rajdhani font-semibold">
+                            Continue to Archetype
+                            <svg class="w-4 h-4 ml-2 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 3: Hunter Archetype Selection -->
+                <div id="step-3" class="setup-step hidden">
+                    <div class="card p-8">
+                        <h3 class="text-2xl font-cairo font-semibold mb-6 text-center">Choose Your Hunter Archetype</h3>
+                        <p class="text-text-secondary text-center mb-8">Your archetype influences quest recommendations, difficulty scaling, and progression paths. Choose the path that resonates with your goals.</p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            <!-- Scholar Detective -->
+                            <div class="archetype-card cursor-pointer p-6 rounded-lg border-2 border-white/10 bg-surface-light hover:border-secondary/50 hover:bg-secondary/5 transition-all duration-300" data-archetype="scholar">
+                                <div class="text-center mb-4">
+                                    <div class="w-16 h-16 bg-secondary/20 rounded-full flex items-center justify-center mx-auto mb-3">
+                                        <svg class="w-8 h-8 text-secondary" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/>
+                                        </svg>
+                                    </div>
+                                    <h4 class="text-lg font-cairo font-semibold text-secondary">Scholar Detective</h4>
+                                </div>
+                                <p class="text-sm text-text-secondary text-center mb-4">Master of investigation and knowledge. Excels in problem-solving, research, and analytical thinking.</p>
+                                <div class="space-y-2">
+                                    <div class="flex justify-between text-xs">
+                                        <span class="text-text-muted">Intelligence</span>
+                                        <span class="text-secondary">+25%</span>
+                                    </div>
+                                    <div class="flex justify-between text-xs">
+                                        <span class="text-text-muted">Focus</span>
+                                        <span class="text-secondary">+15%</span>
+                                    </div>
+                                    <div class="flex justify-between text-xs">
+                                        <span class="text-text-muted">Quest Focus</span>
+                                        <span class="text-accent">Detective Cases</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Fitness Warrior -->
+                            <div class="archetype-card cursor-pointer p-6 rounded-lg border-2 border-white/10 bg-surface-light hover:border-success/50 hover:bg-success/5 transition-all duration-300" data-archetype="warrior">
+                                <div class="text-center mb-4">
+                                    <div class="w-16 h-16 bg-success/20 rounded-full flex items-center justify-center mx-auto mb-3">
+                                        <svg class="w-8 h-8 text-success" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                        </svg>
+                                    </div>
+                                    <h4 class="text-lg font-cairo font-semibold text-success">Fitness Warrior</h4>
+                                </div>
+                                <p class="text-sm text-text-secondary text-center mb-4">Champion of physical excellence. Dominates strength training, endurance challenges, and health optimization.</p>
+                                <div class="space-y-2">
+                                    <div class="flex justify-between text-xs">
+                                        <span class="text-text-muted">Strength</span>
+                                        <span class="text-success">+25%</span>
+                                    </div>
+                                    <div class="flex justify-between text-xs">
+                                        <span class="text-text-muted">Endurance</span>
+                                        <span class="text-success">+20%</span>
+                                    </div>
+                                    <div class="flex justify-between text-xs">
+                                        <span class="text-text-muted">Quest Focus</span>
+                                        <span class="text-accent">Fitness Challenges</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Creative Strategist -->
+                            <div class="archetype-card cursor-pointer p-6 rounded-lg border-2 border-white/10 bg-surface-light hover:border-pink-400/50 hover:bg-pink-400/5 transition-all duration-300" data-archetype="creative">
+                                <div class="text-center mb-4">
+                                    <div class="w-16 h-16 bg-pink-400/20 rounded-full flex items-center justify-center mx-auto mb-3">
+                                        <svg class="w-8 h-8 text-pink-400" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                        </svg>
+                                    </div>
+                                    <h4 class="text-lg font-cairo font-semibold text-pink-400">Creative Strategist</h4>
+                                </div>
+                                <p class="text-sm text-text-secondary text-center mb-4">Innovator and visionary. Excels in creative projects, strategic planning, and artistic expression.</p>
+                                <div class="space-y-2">
+                                    <div class="flex justify-between text-xs">
+                                        <span class="text-text-muted">Creativity</span>
+                                        <span class="text-pink-400">+25%</span>
+                                    </div>
+                                    <div class="flex justify-between text-xs">
+                                        <span class="text-text-muted">Intelligence</span>
+                                        <span class="text-pink-400">+15%</span>
+                                    </div>
+                                    <div class="flex justify-between text-xs">
+                                        <span class="text-text-muted">Quest Focus</span>
+                                        <span class="text-accent">Creative Projects</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Disciplined Monk -->
+                            <div class="archetype-card cursor-pointer p-6 rounded-lg border-2 border-white/10 bg-surface-light hover:border-error/50 hover:bg-error/5 transition-all duration-300" data-archetype="monk">
+                                <div class="text-center mb-4">
+                                    <div class="w-16 h-16 bg-error/20 rounded-full flex items-center justify-center mx-auto mb-3">
+                                        <svg class="w-8 h-8 text-error" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                        </svg>
+                                    </div>
+                                    <h4 class="text-lg font-cairo font-semibold text-error">Disciplined Monk</h4>
+                                </div>
+                                <p class="text-sm text-text-secondary text-center mb-4">Master of self-control and spiritual growth. Excels in meditation, habit formation, and inner strength.</p>
+                                <div class="space-y-2">
+                                    <div class="flex justify-between text-xs">
+                                        <span class="text-text-muted">Discipline</span>
+                                        <span class="text-error">+25%</span>
+                                    </div>
+                                    <div class="flex justify-between text-xs">
+                                        <span class="text-text-muted">Focus</span>
+                                        <span class="text-error">+20%</span>
+                                    </div>
+                                    <div class="flex justify-between text-xs">
+                                        <span class="text-text-muted">Quest Focus</span>
+                                        <span class="text-accent">Spiritual Growth</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Balanced Explorer -->
+                            <div class="archetype-card cursor-pointer p-6 rounded-lg border-2 border-white/10 bg-surface-light hover:border-accent/50 hover:bg-accent/5 transition-all duration-300" data-archetype="explorer">
+                                <div class="text-center mb-4">
+                                    <div class="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-3">
+                                        <svg class="w-8 h-8 text-accent" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                        </svg>
+                                    </div>
+                                    <h4 class="text-lg font-cairo font-semibold text-accent">Balanced Explorer</h4>
+                                </div>
+                                <p class="text-sm text-text-secondary text-center mb-4">Jack of all trades. Maintains balanced growth across all attributes with diverse quest types.</p>
+                                <div class="space-y-2">
+                                    <div class="flex justify-between text-xs">
+                                        <span class="text-text-muted">All Stats</span>
+                                        <span class="text-accent">+10%</span>
+                                    </div>
+                                    <div class="flex justify-between text-xs">
+                                        <span class="text-text-muted">Adaptability</span>
+                                        <span class="text-accent">+15%</span>
+                                    </div>
+                                    <div class="flex justify-between text-xs">
+                                        <span class="text-text-muted">Quest Focus</span>
+                                        <span class="text-accent">Mixed Variety</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Spiritual Scholar -->
+                            <div class="archetype-card cursor-pointer p-6 rounded-lg border-2 border-white/10 bg-surface-light hover:border-primary/50 hover:bg-primary/5 transition-all duration-300" data-archetype="spiritual">
+                                <div class="text-center mb-4">
+                                    <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-3">
+                                        <svg class="w-8 h-8 text-primary-300" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                        </svg>
+                                    </div>
+                                    <h4 class="text-lg font-cairo font-semibold text-primary-300">Spiritual Scholar</h4>
+                                </div>
+                                <p class="text-sm text-text-secondary text-center mb-4">Seeker of divine wisdom. Integrates Islamic values with personal development and Quranic study.</p>
+                                <div class="space-y-2">
+                                    <div class="flex justify-between text-xs">
+                                        <span class="text-text-muted">Focus</span>
+                                        <span class="text-primary-300">+20%</span>
+                                    </div>
+                                    <div class="flex justify-between text-xs">
+                                        <span class="text-text-muted">Discipline</span>
+                                        <span class="text-primary-300">+15%</span>
+                                    </div>
+                                    <div class="flex justify-between text-xs">
+                                        <span class="text-text-muted">Quest Focus</span>
+                                        <span class="text-accent">Spiritual Growth</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex justify-between mt-8">
+                        <button id="prev-step-3" class="bg-surface-light text-text-secondary border border-white/20 px-8 py-3 rounded-lg font-rajdhani font-semibold hover:bg-surface hover:text-text-primary transition-colors">
+                            <svg class="w-4 h-4 mr-2 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                            </svg>
+                            Back
+                        </button>
+                        <button id="next-step-3" class="btn-secondary px-8 py-3 rounded-lg font-rajdhani font-semibold">
+                            Continue to Goals
+                            <svg class="w-4 h-4 ml-2 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 4: Islamic Values & Goals -->
+                <div id="step-4" class="setup-step hidden">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <!-- Islamic Values Integration -->
+                        <div class="card p-8">
+                            <h3 class="text-2xl font-cairo font-semibold mb-6">Islamic Values Integration</h3>
+                            <p class="text-text-secondary mb-6">Respectfully integrate your spiritual journey with personal development goals.</p>
+                            
+                            <div class="space-y-6">
+                                <div>
+                                    <label class="flex items-center space-x-3 cursor-pointer">
+                                        <input type="checkbox" id="quran-study" class="w-4 h-4 text-secondary bg-surface-light border-white/20 rounded focus:ring-secondary focus:ring-2" />
+                                        <span class="text-text-primary">Include Quran Study Tracking</span>
+                                    </label>
+                                    <p class="text-xs text-text-muted mt-1 ml-7">Track daily Quran reading with respectful gamification</p>
+                                </div>
+                                
+                                <div>
+                                    <label class="flex items-center space-x-3 cursor-pointer">
+                                        <input type="checkbox" id="prayer-awareness" class="w-4 h-4 text-secondary bg-surface-light border-white/20 rounded focus:ring-secondary focus:ring-2" />
+                                        <span class="text-text-primary">Prayer Time Awareness</span>
+                                    </label>
+                                    <p class="text-xs text-text-muted mt-1 ml-7">Gentle reminders and schedule awareness for prayer times</p>
+                                </div>
+                                
+                                <div>
+                                    <label class="flex items-center space-x-3 cursor-pointer">
+                                        <input type="checkbox" id="islamic-goals" class="w-4 h-4 text-secondary bg-surface-light border-white/20 rounded focus:ring-secondary focus:ring-2" />
+                                        <span class="text-text-primary">Islamic Character Development</span>
+                                    </label>
+                                    <p class="text-xs text-text-muted mt-1 ml-7">Goals focused on patience, gratitude, and moral excellence</p>
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-sm font-medium text-text-secondary mb-2">Daily Quran Pages Goal</label>
+                                    <select id="quran-pages" class="w-full bg-surface-light border border-white/10 rounded-lg px-4 py-3 text-text-primary focus:outline-none focus:border-secondary/50 transition-colors">
+                                        <option value="0">No specific goal</option>
+                                        <option value="1">1 page per day</option>
+                                        <option value="2">2 pages per day</option>
+                                        <option value="3">3 pages per day</option>
+                                        <option value="5">5 pages per day</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Life Area Goals -->
+                        <div class="card p-8">
+                            <h3 class="text-2xl font-cairo font-semibold mb-6">Life Area Goals</h3>
+                            <p class="text-text-secondary mb-6">Set your primary focus areas for systematic improvement.</p>
+                            
+                            <div class="space-y-4">
+                                <div class="goal-area p-4 rounded-lg border border-white/10 bg-surface-light">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <label class="flex items-center space-x-3 cursor-pointer">
+                                            <input type="checkbox" class="goal-checkbox w-4 h-4 text-secondary bg-surface border-white/20 rounded focus:ring-secondary focus:ring-2" />
+                                            <span class="font-medium text-text-primary">Physical Fitness</span>
+                                        </label>
+                                        <select class="goal-priority bg-surface border border-white/20 rounded px-2 py-1 text-xs text-text-secondary">
+                                            <option value="low">Low</option>
+                                            <option value="medium">Medium</option>
+                                            <option value="high">High</option>
+                                        </select>
+                                    </div>
+                                    <p class="text-xs text-text-muted">Strength training, cardio, flexibility, nutrition</p>
+                                </div>
+                                
+                                <div class="goal-area p-4 rounded-lg border border-white/10 bg-surface-light">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <label class="flex items-center space-x-3 cursor-pointer">
+                                            <input type="checkbox" class="goal-checkbox w-4 h-4 text-secondary bg-surface border-white/20 rounded focus:ring-secondary focus:ring-2" />
+                                            <span class="font-medium text-text-primary">Intellectual Growth</span>
+                                        </label>
+                                        <select class="goal-priority bg-surface border border-white/20 rounded px-2 py-1 text-xs text-text-secondary">
+                                            <option value="low">Low</option>
+                                            <option value="medium">Medium</option>
+                                            <option value="high">High</option>
+                                        </select>
+                                    </div>
+                                    <p class="text-xs text-text-muted">Reading, learning new skills, problem-solving</p>
+                                </div>
+                                
+                                <div class="goal-area p-4 rounded-lg border border-white/10 bg-surface-light">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <label class="flex items-center space-x-3 cursor-pointer">
+                                            <input type="checkbox" class="goal-checkbox w-4 h-4 text-secondary bg-surface border-white/20 rounded focus:ring-secondary focus:ring-2" />
+                                            <span class="font-medium text-text-primary">Creative Expression</span>
+                                        </label>
+                                        <select class="goal-priority bg-surface border border-white/20 rounded px-2 py-1 text-xs text-text-secondary">
+                                            <option value="low">Low</option>
+                                            <option value="medium">Medium</option>
+                                            <option value="high">High</option>
+                                        </select>
+                                    </div>
+                                    <p class="text-xs text-text-muted">Art, writing, music, innovative projects</p>
+                                </div>
+                                
+                                <div class="goal-area p-4 rounded-lg border border-white/10 bg-surface-light">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <label class="flex items-center space-x-3 cursor-pointer">
+                                            <input type="checkbox" class="goal-checkbox w-4 h-4 text-secondary bg-surface border-white/20 rounded focus:ring-secondary focus:ring-2" />
+                                            <span class="font-medium text-text-primary">Career Development</span>
+                                        </label>
+                                        <select class="goal-priority bg-surface border border-white/20 rounded px-2 py-1 text-xs text-text-secondary">
+                                            <option value="low">Low</option>
+                                            <option value="medium">Medium</option>
+                                            <option value="high">High</option>
+                                        </select>
+                                    </div>
+                                    <p class="text-xs text-text-muted">Professional skills, networking, leadership</p>
+                                </div>
+                                
+                                <div class="goal-area p-4 rounded-lg border border-white/10 bg-surface-light">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <label class="flex items-center space-x-3 cursor-pointer">
+                                            <input type="checkbox" class="goal-checkbox w-4 h-4 text-secondary bg-surface border-white/20 rounded focus:ring-secondary focus:ring-2" />
+                                            <span class="font-medium text-text-primary">Social Connections</span>
+                                        </label>
+                                        <select class="goal-priority bg-surface border border-white/20 rounded px-2 py-1 text-xs text-text-secondary">
+                                            <option value="low">Low</option>
+                                            <option value="medium">Medium</option>
+                                            <option value="high">High</option>
+                                        </select>
+                                    </div>
+                                    <p class="text-xs text-text-muted">Relationships, community involvement, communication</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex justify-between mt-8">
+                        <button id="prev-step-4" class="bg-surface-light text-text-secondary border border-white/20 px-8 py-3 rounded-lg font-rajdhani font-semibold hover:bg-surface hover:text-text-primary transition-colors">
+                            <svg class="w-4 h-4 mr-2 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                            </svg>
+                            Back
+                        </button>
+                        <button id="complete-setup" class="bg-gradient-to-r from-secondary to-accent text-white px-8 py-3 rounded-lg font-rajdhani font-semibold hover:from-secondary-600 hover:to-accent-600 transition-all duration-300 shadow-glow-blue">
+                            Complete Setup & Enter Guild
+                            <svg class="w-4 h-4 ml-2 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Completion Modal -->
+    <div id="completion-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center">
+        <div class="bg-surface rounded-2xl p-8 max-w-md mx-4 border border-secondary/30 shadow-achievement">
+            <div class="text-center">
+                <div class="w-20 h-20 bg-gradient-to-br from-secondary to-accent rounded-full flex items-center justify-center mx-auto mb-6 animate-pulse-slow">
+                    <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    </svg>
+                </div>
+                
+                <h3 class="text-2xl font-cairo font-bold text-gradient mb-4">Welcome to the Guild!</h3>
+                <p class="text-text-secondary mb-6">Your hunter profile has been created successfully. Your unique Hunter ID is:</p>
+                
+                <div class="bg-surface-light rounded-lg p-4 mb-6">
+                    <div class="text-2xl font-orbitron font-bold text-accent" id="hunter-id">HNT-2025-7841</div>
+                </div>
+                
+                <div class="space-y-2 mb-6">
+                    <div class="flex justify-between text-sm">
+                        <span class="text-text-secondary">Starting Level:</span>
+                        <span class="text-accent font-semibold">1</span>
+                    </div>
+                    <div class="flex justify-between text-sm">
+                        <span class="text-text-secondary">Initial XP:</span>
+                        <span class="text-accent font-semibold">0 / 100</span>
+                    </div>
+                    <div class="flex justify-between text-sm">
+                        <span class="text-text-secondary">Archetype:</span>
+                        <span class="text-secondary font-semibold" id="selected-archetype">Scholar Detective</span>
+                    </div>
+                </div>
+                
+                <button id="enter-dashboard" class="w-full bg-gradient-to-r from-secondary to-accent text-white py-3 rounded-lg font-rajdhani font-semibold hover:from-secondary-600 hover:to-accent-600 transition-all duration-300">
+                    Enter Main Dashboard
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Navigation (Hidden on desktop) -->
+    <nav class="md:hidden fixed bottom-0 left-0 right-0 bg-surface/90 backdrop-blur-md border-t border-white/10 z-40">
+        <div class="grid grid-cols-5 gap-1 p-2">
+            <a href="main_dashboard.html" class="flex flex-col items-center py-2 text-text-secondary">
+                <svg class="w-5 h-5 mb-1" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/>
+                </svg>
+                <span class="text-xs">Dashboard</span>
+            </a>
+            <a href="profile_setup.html" class="flex flex-col items-center py-2 text-secondary">
+                <svg class="w-5 h-5 mb-1" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                </svg>
+                <span class="text-xs">Profile</span>
+            </a>
+            <a href="detective_academy.html" class="flex flex-col items-center py-2 text-text-secondary">
+                <svg class="w-5 h-5 mb-1" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                </svg>
+                <span class="text-xs">Detective</span>
+            </a>
+            <a href="progress_analytics.html" class="flex flex-col items-center py-2 text-text-secondary">
+                <svg class="w-5 h-5 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                </svg>
+                <span class="text-xs">Analytics</span>
+            </a>
+            <a href="system_settings.html" class="flex flex-col items-center py-2 text-text-secondary">
+                <svg class="w-5 h-5 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                </svg>
+                <span class="text-xs">Settings</span>
+            </a>
+        </div>
+    </nav>
+
+    <script>
+        // Setup wizard state management
+        let currentStep = 1;
+        let totalPoints = 100;
+        let usedPoints = 90; // 6 stats * 15 default points
+        let selectedArchetype = null;
+        let selectedAura = 'electric';
+
+        // Initialize setup wizard
+        document.addEventListener('DOMContentLoaded', function() {
+            updateProgressBar();
+            initializeStatSliders();
+            initializeArchetypeSelection();
+            initializeAuraSelection();
+            initializePhotoUpload();
+            initializeStepNavigation();
+        });
+
+        // Progress bar update
+        function updateProgressBar() {
+            const progress = (currentStep / 4) * 100;
+            document.getElementById('setup-progress').style.width = progress + '%';
+            document.getElementById('progress-text').textContent = Math.round(progress) + '%';
+        }
+
+        // Step navigation
+        function initializeStepNavigation() {
+            // Next buttons
+            document.getElementById('next-step-1').addEventListener('click', () => goToStep(2));
+            document.getElementById('next-step-2').addEventListener('click', () => goToStep(3));
+            document.getElementById('next-step-3').addEventListener('click', () => goToStep(4));
+            
+            // Previous buttons
+            document.getElementById('prev-step-2').addEventListener('click', () => goToStep(1));
+            document.getElementById('prev-step-3').addEventListener('click', () => goToStep(2));
+            document.getElementById('prev-step-4').addEventListener('click', () => goToStep(3));
+            
+            // Complete setup
+            document.getElementById('complete-setup').addEventListener('click', completeSetup);
+            document.getElementById('enter-dashboard').addEventListener('click', () => {
+                window.location.href = 'main_dashboard.html';
+            });
+        }
+
+        function goToStep(step) {
+            // Hide current step
+            document.getElementById(`step-${currentStep}`).classList.add('hidden');
+            document.getElementById(`step-${currentStep}`).classList.remove('active');
+            
+            // Show new step
+            currentStep = step;
+            document.getElementById(`step-${currentStep}`).classList.remove('hidden');
+            document.getElementById(`step-${currentStep}`).classList.add('active');
+            
+            updateProgressBar();
+        }
+
+        // Stat sliders initialization
+        function initializeStatSliders() {
+            const sliders = ['intelligence', 'strength', 'endurance', 'focus', 'creativity', 'discipline'];
+            
+            sliders.forEach(stat => {
+                const slider = document.getElementById(stat);
+                const valueDisplay = document.getElementById(stat.substring(0, 3) + '-value');
+                
+                slider.addEventListener('input', function() {
+                    updateStatValues();
+                });
+            });
+        }
+
+        function updateStatValues() {
+            const sliders = ['intelligence', 'strength', 'endurance', 'focus', 'creativity', 'discipline'];
+            let total = 0;
+            
+            sliders.forEach(stat => {
+                const value = parseInt(document.getElementById(stat).value);
+                const display = document.getElementById(stat.substring(0, 3) + '-value');
+                display.textContent = value;
+                total += value;
+            });
+            
+            const remaining = totalPoints - total;
+            document.getElementById('points-remaining').textContent = remaining;
+            
+            // Update button state
+            const nextBtn = document.getElementById('next-step-2');
+            if (remaining < 0) {
+                nextBtn.disabled = true;
+                nextBtn.classList.add('opacity-50', 'cursor-not-allowed');
+                document.getElementById('points-remaining').classList.add('text-error');
+            } else {
+                nextBtn.disabled = false;
+                nextBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+                document.getElementById('points-remaining').classList.remove('text-error');
+            }
+        }
+
+        // Archetype selection
+        function initializeArchetypeSelection() {
+            const archetypeCards = document.querySelectorAll('.archetype-card');
+            
+            archetypeCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    // Remove active state from all cards
+                    archetypeCards.forEach(c => {
+                        c.classList.remove('border-secondary', 'bg-secondary/10');
+                        c.classList.add('border-white/10', 'bg-surface-light');
+                    });
+                    
+                    // Add active state to clicked card
+                    this.classList.remove('border-white/10', 'bg-surface-light');
+                    this.classList.add('border-secondary', 'bg-secondary/10');
+                    
+                    selectedArchetype = this.dataset.archetype;
+                    
+                    // Enable next button
+                    document.getElementById('next-step-3').disabled = false;
+                    document.getElementById('next-step-3').classList.remove('opacity-50', 'cursor-not-allowed');
+                });
+            });
+        }
+
+        // Aura selection
+        function initializeAuraSelection() {
+            const auraOptions = document.querySelectorAll('.aura-option');
+            
+            auraOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    // Remove active state from all options
+                    auraOptions.forEach(o => {
+                        o.classList.remove('active', 'border-secondary', 'bg-secondary/20', 'text-secondary');
+                        o.classList.add('border-white/20', 'bg-surface-light', 'text-text-secondary');
+                    });
+                    
+                    // Add active state to clicked option
+                    this.classList.add('active', 'border-secondary', 'bg-secondary/20', 'text-secondary');
+                    this.classList.remove('border-white/20', 'bg-surface-light', 'text-text-secondary');
+                    
+                    selectedAura = this.dataset.aura;
+                    updateAuraEffect();
+                });
+            });
+        }
+
+        function updateAuraEffect() {
+            const auraGradient = document.getElementById('auraGradient');
+            
+            switch(selectedAura) {
+                case 'electric':
+                    auraGradient.innerHTML = `
+                        <stop offset="0%" style="stop-color:#00b4ff;stop-opacity:1" />
+                        <stop offset="50%" style="stop-color:#40c4ff;stop-opacity:0.8" />
+                        <stop offset="100%" style="stop-color:#00b4ff;stop-opacity:1" />
+                    `;
+                    break;
+                case 'golden':
+                    auraGradient.innerHTML = `
+                        <stop offset="0%" style="stop-color:#ffd700;stop-opacity:1" />
+                        <stop offset="50%" style="stop-color:#ffb300;stop-opacity:0.8" />
+                        <stop offset="100%" style="stop-color:#ffd700;stop-opacity:1" />
+                    `;
+                    break;
+                case 'nature':
+                    auraGradient.innerHTML = `
+                        <stop offset="0%" style="stop-color:#4caf50;stop-opacity:1" />
+                        <stop offset="50%" style="stop-color:#81c784;stop-opacity:0.8" />
+                        <stop offset="100%" style="stop-color:#4caf50;stop-opacity:1" />
+                    `;
+                    break;
+            }
+        }
+
+        // Photo upload
+        function initializePhotoUpload() {
+            const uploadBtn = document.getElementById('upload-btn');
+            const fileInput = document.getElementById('photo-upload');
+            const profileImage = document.getElementById('profile-image');
+            
+            uploadBtn.addEventListener('click', () => fileInput.click());
+            
+            fileInput.addEventListener('change', function(e) {
+                const file = e.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        profileImage.setAttribute('href', e.target.result);
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+        }
+
+        // Complete setup
+        function completeSetup() {
+            // Generate Hunter ID
+            const hunterId = 'HNT-2025-' + Math.floor(Math.random() * 9000 + 1000);
+            document.getElementById('hunter-id').textContent = hunterId;
+            
+            // Update archetype display
+            const archetypeNames = {
+                'scholar': 'Scholar Detective',
+                'warrior': 'Fitness Warrior',
+                'creative': 'Creative Strategist',
+                'monk': 'Disciplined Monk',
+                'explorer': 'Balanced Explorer',
+                'spiritual': 'Spiritual Scholar'
+            };
+            
+            document.getElementById('selected-archetype').textContent = archetypeNames[selectedArchetype] || 'Balanced Explorer';
+            
+            // Show completion modal
+            document.getElementById('completion-modal').classList.remove('hidden');
+            
+            // Save profile data (in real app, this would be sent to backend)
+            const profileData = {
+                hunterId: hunterId,
+                hunterName: document.getElementById('hunter-name').value,
+                realName: document.getElementById('real-name').value,
+                ageRange: document.getElementById('age-range').value,
+                archetype: selectedArchetype,
+                aura: selectedAura,
+                stats: {
+                    intelligence: parseInt(document.getElementById('intelligence').value),
+                    strength: parseInt(document.getElementById('strength').value),
+                    endurance: parseInt(document.getElementById('endurance').value),
+                    focus: parseInt(document.getElementById('focus').value),
+                    creativity: parseInt(document.getElementById('creativity').value),
+                    discipline: parseInt(document.getElementById('discipline').value)
+                },
+                islamicValues: {
+                    quranStudy: document.getElementById('quran-study').checked,
+                    prayerAwareness: document.getElementById('prayer-awareness').checked,
+                    islamicGoals: document.getElementById('islamic-goals').checked,
+                    quranPages: parseInt(document.getElementById('quran-pages').value)
+                },
+                createdAt: new Date().toISOString()
+            };
+            
+            localStorage.setItem('hunterProfile', JSON.stringify(profileData));
+        }
+
+        // Language selection
+        const languageOptions = document.querySelectorAll('.language-option');
+        languageOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                languageOptions.forEach(o => {
+                    o.classList.remove('active', 'border-secondary', 'bg-secondary/20', 'text-secondary');
+                    o.classList.add('border-white/20', 'bg-surface-light', 'text-text-secondary');
+                });
+                
+                this.classList.add('active', 'border-secondary', 'bg-secondary/20', 'text-secondary');
+                this.classList.remove('border-white/20', 'bg-surface-light', 'text-text-secondary');
+            });
+        });
+
+        // CSS for stat sliders
+        const style = document.createElement('style');
+        style.textContent = `
+            .stat-slider {
+                -webkit-appearance: none;
+                appearance: none;
+                height: 6px;
+                border-radius: 3px;
+                background: #2a2a2a;
+                outline: none;
+            }
+            
+            .stat-slider::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                appearance: none;
+                width: 18px;
+                height: 18px;
+                border-radius: 50%;
+                background: linear-gradient(45deg, #00b4ff, #ffd700);
+                cursor: pointer;
+                box-shadow: 0 0 10px rgba(0, 180, 255, 0.5);
+            }
+            
+            .stat-slider::-moz-range-thumb {
+                width: 18px;
+                height: 18px;
+                border-radius: 50%;
+                background: linear-gradient(45deg, #00b4ff, #ffd700);
+                cursor: pointer;
+                border: none;
+                box-shadow: 0 0 10px rgba(0, 180, 255, 0.5);
+            }
+            
+            .setup-step {
+                transition: all 0.3s ease-out;
+            }
+            
+            .setup-step.hidden {
+                opacity: 0;
+                transform: translateX(20px);
+            }
+            
+            .setup-step.active {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>

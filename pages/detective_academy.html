@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>أكاديمية المحققين - Solo Leveling Dashboard</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <style>
+        .rtl-font {
+            font-family: 'Noto Sans Arabic', 'Cairo', sans-serif;
+        }
+        .evidence-hover:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(138, 43, 226, 0.3);
+        }
+        .case-progress {
+            background: linear-gradient(90deg, #4c1d95 0%, #7c3aed 100%);
+        }
+        .mystery-glow {
+            box-shadow: 0 0 30px rgba(138, 43, 226, 0.2);
+        }
+        .arabic-text {
+            line-height: 1.8;
+            text-align: right;
+        }
+    </style>
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fsololevel3669back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.8"></script>
+</head>
+<body class="bg-background text-text-primary font-inter overflow-x-hidden rtl-font">
+    <!-- Navigation Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-surface/90 backdrop-blur-md border-b border-white/10">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3 space-x-reverse">
+                    <div class="w-10 h-10 bg-gradient-to-br from-purple-600 to-purple-800 rounded-lg flex items-center justify-center">
+                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                    </div>
+                    <h1 class="text-xl font-cairo font-bold text-gradient">أكاديمية المحققين الرقمية</h1>
+                </div>
+                
+                <!-- Navigation Links -->
+                <div class="hidden md:flex items-center space-x-6 space-x-reverse">
+                    <a href="main_dashboard.html" class="text-text-secondary hover:text-secondary transition-colors">لوحة التحكم</a>
+                    <a href="profile_setup.html" class="text-text-secondary hover:text-secondary transition-colors">الملف الشخصي</a>
+                    <a href="detective_academy.html" class="text-secondary font-medium border-b-2 border-secondary pb-1">أكاديمية المحققين</a>
+                    <a href="progress_analytics.html" class="text-text-secondary hover:text-secondary transition-colors">التحليلات</a>
+                    <a href="achievement_gallery.html" class="text-text-secondary hover:text-secondary transition-colors">الإنجازات</a>
+                    <a href="system_settings.html" class="text-text-secondary hover:text-secondary transition-colors">الإعدادات</a>
+                </div>
+
+                <!-- User Profile Quick Access -->
+                <div class="flex items-center space-x-4 space-x-reverse">
+                    <div class="relative">
+                        <button class="w-8 h-8 bg-purple-600/20 rounded-full flex items-center justify-center text-purple-400 hover:bg-purple-600/30 transition-colors">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z"/>
+                            </svg>
+                        </button>
+                        <div class="absolute -top-1 -right-1 w-3 h-3 bg-purple-500 rounded-full animate-pulse"></div>
+                    </div>
+                    <div class="w-10 h-10 rounded-full overflow-hidden border-2 border-purple-500/50">
+                        <img src="https://images.pexels.com/photos/1040880/pexels-photo-1040880.jpeg?auto=compress&cs=tinysrgb&w=150" alt="صورة المحقق" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Detective Academy Content -->
+    <main class="pt-20 min-h-screen">
+        <!-- Welcome Banner -->
+        <section class="container mx-auto px-6 py-8">
+            <div class="bg-gradient-to-l from-purple-900/20 to-indigo-900/20 rounded-2xl p-8 border border-purple-500/30 relative overflow-hidden mystery-glow">
+                <div class="absolute inset-0 bg-gradient-to-l from-purple-500/5 to-indigo-500/5"></div>
+                <div class="relative z-10 text-center">
+                    <h2 class="text-3xl font-cairo font-bold mb-2 arabic-text">مرحباً بك في أكاديمية المحققين</h2>
+                    <p class="text-text-secondary mb-4 arabic-text">استعد لحل الألغاز وتطوير مهاراتك التحليلية من خلال قضايا تفاعلية مثيرة</p>
+                    <div class="flex items-center justify-center space-x-6 space-x-reverse">
+                        <div class="flex items-center space-x-2 space-x-reverse">
+                            <div class="w-3 h-3 bg-purple-500 rounded-full animate-pulse"></div>
+                            <span class="text-sm text-purple-400">المحقق المتقدم</span>
+                        </div>
+                        <div class="flex items-center space-x-2 space-x-reverse">
+                            <svg class="w-4 h-4 text-accent" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                            <span class="text-sm text-accent">١٢ قضية محلولة</span>
+                        </div>
+                        <div class="text-sm text-text-secondary">آخر نشاط: منذ ساعة واحدة</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Detective Academy Grid Layout -->
+        <section class="container mx-auto px-6 pb-8">
+            <div class="grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                
+                <!-- Current Case Investigation -->
+                <div class="lg:col-span-2 xl:col-span-2">
+                    <div class="card p-8 h-full mystery-glow">
+                        <div class="flex items-center justify-between mb-6">
+                            <h3 class="text-xl font-cairo font-semibold arabic-text">القضية النشطة: سرقة المتحف الغامضة</h3>
+                            <div class="flex items-center space-x-2 space-x-reverse">
+                                <span class="px-3 py-1 bg-purple-600/20 text-purple-400 text-xs rounded-full border border-purple-600/30">
+                                    صعوبة متوسطة
+                                </span>
+                                <button class="text-purple-400 hover:text-purple-300 transition-colors">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Case Description -->
+                        <div class="bg-surface-light rounded-lg p-6 mb-6">
+                            <p class="text-text-secondary arabic-text leading-relaxed">
+                                اختفت قطعة أثرية نادرة من متحف التاريخ الإسلامي في القاهرة. لا توجد علامات على الكسر، وجميع أنظمة الأمان كانت تعمل بشكل طبيعي. 
+                                المشتبه بهم الرئيسيون هم: حارس الأمن، أمين المتحف، وزائر غامض شوهد في المنطقة.
+                            </p>
+                        </div>
+
+                        <!-- Evidence Gallery -->
+                        <div class="mb-6">
+                            <h4 class="text-lg font-cairo font-semibold mb-4 arabic-text">معرض الأدلة</h4>
+                            <div class="grid grid-cols-3 gap-4">
+                                <div class="evidence-hover bg-surface-light rounded-lg p-4 border border-purple-500/20 cursor-pointer transition-all duration-300">
+                                    <div class="w-full h-24 bg-purple-600/10 rounded-lg mb-3 flex items-center justify-center">
+                                        <svg class="w-8 h-8 text-purple-400" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9A3,3 0 0,0 9,12M12,17L18.5,10L17,8.5L12,13.5L7,8.5L5.5,10L12,17Z"/>
+                                        </svg>
+                                    </div>
+                                    <p class="text-xs text-center arabic-text">كاميرا المراقبة</p>
+                                </div>
+                                
+                                <div class="evidence-hover bg-surface-light rounded-lg p-4 border border-purple-500/20 cursor-pointer transition-all duration-300">
+                                    <div class="w-full h-24 bg-purple-600/10 rounded-lg mb-3 flex items-center justify-center">
+                                        <svg class="w-8 h-8 text-purple-400" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M12,2A3,3 0 0,1 15,5V11A3,3 0 0,1 12,14A3,3 0 0,1 9,11V5A3,3 0 0,1 12,2M19,11C19,14.53 16.39,17.44 13,17.93V21H11V17.93C7.61,17.44 5,14.53 5,11H7A5,5 0 0,0 12,16A5,5 0 0,0 17,11H19Z"/>
+                                        </svg>
+                                    </div>
+                                    <p class="text-xs text-center arabic-text">شهادة الشاهد</p>
+                                </div>
+                                
+                                <div class="evidence-hover bg-surface-light rounded-lg p-4 border border-purple-500/20 cursor-pointer transition-all duration-300">
+                                    <div class="w-full h-24 bg-purple-600/10 rounded-lg mb-3 flex items-center justify-center">
+                                        <svg class="w-8 h-8 text-purple-400" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M12,2C13.1,2 14,2.9 14,4C14,5.1 13.1,6 12,6C10.9,6 10,5.1 10,4C10,2.9 10.9,2 12,2M21,9V7L15,1H5C3.89,1 3,1.89 3,3V21A2,2 0 0,0 5,23H19A2,2 0 0,0 21,21V9M19,9H14V4H5V19H19V9Z"/>
+                                        </svg>
+                                    </div>
+                                    <p class="text-xs text-center arabic-text">تقرير الأمان</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Investigation Progress -->
+                        <div class="mb-4">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-sm font-medium arabic-text">تقدم التحقيق</span>
+                                <span class="text-sm text-purple-400">٦٥٪</span>
+                            </div>
+                            <div class="w-full bg-surface-light rounded-full h-3">
+                                <div class="case-progress h-3 rounded-full" style="width: 65%"></div>
+                            </div>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="flex space-x-4 space-x-reverse">
+                            <button class="flex-1 bg-purple-600/20 text-purple-400 border border-purple-600/30 rounded-lg py-3 text-sm font-medium hover:bg-purple-600/30 transition-colors arabic-text">
+                                فحص الأدلة
+                            </button>
+                            <button class="flex-1 bg-secondary/20 text-secondary border border-secondary/30 rounded-lg py-3 text-sm font-medium hover:bg-secondary/30 transition-colors arabic-text">
+                                استجواب المشتبهين
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Detective Stats Hexagon -->
+                <div class="xl:col-span-1">
+                    <div class="card p-6 h-full">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-lg font-cairo font-semibold arabic-text">إحصائيات المحقق</h3>
+                            <button class="text-purple-400 hover:text-purple-300 transition-colors">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+                                </svg>
+                            </button>
+                        </div>
+                        
+                        <!-- Hexagonal Detective Stats -->
+                        <div class="relative flex items-center justify-center h-64">
+                            <svg class="w-56 h-56" viewBox="0 0 240 240">
+                                <!-- Hexagon Background -->
+                                <polygon points="120,20 200,70 200,150 120,200 40,150 40,70" fill="none" stroke="rgba(147,51,234,0.3)" stroke-width="2"/>
+                                
+                                <!-- Intelligence (Top) -->
+                                <g>
+                                    <circle cx="120" cy="35" r="20" fill="rgba(147,51,234,0.1)" stroke="#9333ea" stroke-width="2"/>
+                                    <circle cx="120" cy="35" r="16" fill="none" stroke="#9333ea" stroke-width="3" stroke-dasharray="100.48" stroke-dashoffset="15.07" transform="rotate(-90 120 35)" class="animate-pulse-slow"/>
+                                    <text x="120" y="40" text-anchor="middle" class="text-xs fill-purple-400 font-semibold">ذكاء</text>
+                                    <text x="120" y="60" text-anchor="middle" class="text-lg fill-accent font-bold">٨٥</text>
+                                </g>
+                                
+                                <!-- Perception (Top Right) -->
+                                <g>
+                                    <circle cx="185" cy="85" r="20" fill="rgba(59,130,246,0.1)" stroke="#3b82f6" stroke-width="2"/>
+                                    <circle cx="185" cy="85" r="16" fill="none" stroke="#3b82f6" stroke-width="3" stroke-dasharray="100.48" stroke-dashoffset="20.10" transform="rotate(-90 185 85)" class="animate-pulse-slow"/>
+                                    <text x="185" y="90" text-anchor="middle" class="text-xs fill-blue-400 font-semibold">إدراك</text>
+                                    <text x="185" y="110" text-anchor="middle" class="text-lg fill-blue-400 font-bold">٨٠</text>
+                                </g>
+                                
+                                <!-- Logic (Bottom Right) -->
+                                <g>
+                                    <circle cx="185" cy="155" r="20" fill="rgba(16,185,129,0.1)" stroke="#10b981" stroke-width="2"/>
+                                    <circle cx="185" cy="155" r="16" fill="none" stroke="#10b981" stroke-width="3" stroke-dasharray="100.48" stroke-dashoffset="25.12" transform="rotate(-90 185 155)" class="animate-pulse-slow"/>
+                                    <text x="185" y="160" text-anchor="middle" class="text-xs fill-emerald-400 font-semibold">منطق</text>
+                                    <text x="185" y="180" text-anchor="middle" class="text-lg fill-emerald-400 font-bold">٧٥</text>
+                                </g>
+                                
+                                <!-- Analysis (Bottom) -->
+                                <g>
+                                    <circle cx="120" cy="185" r="20" fill="rgba(245,158,11,0.1)" stroke="#f59e0b" stroke-width="2"/>
+                                    <circle cx="120" cy="185" r="16" fill="none" stroke="#f59e0b" stroke-width="3" stroke-dasharray="100.48" stroke-dashoffset="30.14" transform="rotate(-90 120 185)" class="animate-pulse-slow"/>
+                                    <text x="120" y="190" text-anchor="middle" class="text-xs fill-amber-400 font-semibold">تحليل</text>
+                                    <text x="120" y="210" text-anchor="middle" class="text-lg fill-amber-400 font-bold">٧٠</text>
+                                </g>
+                                
+                                <!-- Deduction (Bottom Left) -->
+                                <g>
+                                    <circle cx="55" cy="155" r="20" fill="rgba(239,68,68,0.1)" stroke="#ef4444" stroke-width="2"/>
+                                    <circle cx="55" cy="155" r="16" fill="none" stroke="#ef4444" stroke-width="3" stroke-dasharray="100.48" stroke-dashoffset="35.17" transform="rotate(-90 55 155)" class="animate-pulse-slow"/>
+                                    <text x="55" y="160" text-anchor="middle" class="text-xs fill-red-400 font-semibold">استنتاج</text>
+                                    <text x="55" y="180" text-anchor="middle" class="text-lg fill-red-400 font-bold">٦٥</text>
+                                </g>
+                                
+                                <!-- Intuition (Top Left) -->
+                                <g>
+                                    <circle cx="55" cy="85" r="20" fill="rgba(168,85,247,0.1)" stroke="#a855f7" stroke-width="2"/>
+                                    <circle cx="55" cy="85" r="16" fill="none" stroke="#a855f7" stroke-width="3" stroke-dasharray="100.48" stroke-dashoffset="10.05" transform="rotate(-90 55 85)" class="animate-pulse-slow"/>
+                                    <text x="55" y="90" text-anchor="middle" class="text-xs fill-purple-400 font-semibold">حدس</text>
+                                    <text x="55" y="110" text-anchor="middle" class="text-lg fill-purple-400 font-bold">٩٠</text>
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case Library -->
+                <div class="xl:col-span-1">
+                    <div class="card p-6 h-full">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-lg font-cairo font-semibold arabic-text">مكتبة القضايا</h3>
+                            <button class="text-secondary hover:text-secondary-400 transition-colors">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+                                </svg>
+                            </button>
+                        </div>
+                        
+                        <div class="space-y-3">
+                            <!-- Case Item 1 -->
+                            <div class="bg-surface-light rounded-lg p-3 border border-success/30">
+                                <div class="flex items-center justify-between mb-2">
+                                    <h5 class="text-sm font-medium arabic-text">لغز الخاتم المفقود</h5>
+                                    <span class="text-xs text-accent font-semibold">+٢٠٠ نقطة</span>
+                                </div>
+                                <div class="flex items-center space-x-2 space-x-reverse">
+                                    <div class="w-4 h-4 bg-success rounded-full flex items-center justify-center">
+                                        <svg class="w-2 h-2 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                        </svg>
+                                    </div>
+                                    <span class="text-xs text-success arabic-text">مكتملة</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Case Item 2 -->
+                            <div class="bg-surface-light rounded-lg p-3 border border-purple-500/30">
+                                <div class="flex items-center justify-between mb-2">
+                                    <h5 class="text-sm font-medium arabic-text">جريمة في المكتبة</h5>
+                                    <span class="text-xs text-accent font-semibold">+٣٠٠ نقطة</span>
+                                </div>
+                                <div class="flex items-center space-x-2 space-x-reverse">
+                                    <div class="w-full bg-surface rounded-full h-1.5">
+                                        <div class="bg-purple-500 h-1.5 rounded-full" style="width: 40%"></div>
+                                    </div>
+                                    <span class="text-xs text-text-secondary">٤٠٪</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Case Item 3 -->
+                            <div class="bg-surface-light rounded-lg p-3 border border-white/10">
+                                <div class="flex items-center justify-between mb-2">
+                                    <h5 class="text-sm font-medium arabic-text">سر القصر المهجور</h5>
+                                    <span class="text-xs text-accent font-semibold">+٥٠٠ نقطة</span>
+                                </div>
+                                <div class="flex items-center space-x-2 space-x-reverse">
+                                    <div class="w-3 h-3 border-2 border-text-muted rounded-full"></div>
+                                    <span class="text-xs text-text-muted arabic-text">مقفلة</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button class="w-full mt-4 bg-purple-600/20 text-purple-400 border border-purple-600/30 rounded-lg py-2 text-sm font-medium hover:bg-purple-600/30 transition-colors arabic-text">
+                            عرض جميع القضايا
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Oracle Chamber (Detective Mode) -->
+                <div class="lg:col-span-2 xl:col-span-2">
+                    <div class="card p-6 h-full">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-lg font-cairo font-semibold arabic-text">غرفة الوحي - وضع المحقق</h3>
+                            <div class="flex items-center space-x-2 space-x-reverse">
+                                <button class="px-3 py-1 bg-surface-light text-text-secondary text-xs rounded-full hover:bg-secondary/20 hover:text-secondary transition-colors">
+                                    وضع البحث
+                                </button>
+                                <button class="px-3 py-1 bg-purple-600/20 text-purple-400 text-xs rounded-full border border-purple-600/30">
+                                    وضع المحقق
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-surface-light rounded-lg p-4 h-48 overflow-y-auto mb-4 space-y-3">
+                            <div class="flex items-start space-x-3 space-x-reverse">
+                                <div class="w-8 h-8 bg-purple-600/20 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <svg class="w-4 h-4 text-purple-400" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z"/>
+                                    </svg>
+                                </div>
+                                <div class="bg-purple-600/10 rounded-lg p-3 flex-1">
+                                    <p class="text-sm arabic-text">أهلاً بك أيها المحقق! أنا هنا لمساعدتك في حل القضايا وتطوير مهاراتك التحليلية. ما الذي تود التركيز عليه اليوم؟</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-3 space-x-reverse justify-end">
+                                <div class="bg-primary/20 rounded-lg p-3 max-w-xs">
+                                    <p class="text-sm arabic-text">كيف يمكنني تحسين مهارات الاستنتاج لدي؟</p>
+                                </div>
+                                <div class="w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <svg class="w-4 h-4 text-primary-300" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                                    </svg>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-3 space-x-reverse">
+                                <div class="w-8 h-8 bg-purple-600/20 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <svg class="w-4 h-4 text-purple-400" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z"/>
+                                    </svg>
+                                </div>
+                                <div class="bg-purple-600/10 rounded-lg p-3 flex-1">
+                                    <p class="text-sm arabic-text">ممتاز! لتحسين الاستنتاج، أنصحك بالتركيز على تحليل التفاصيل الصغيرة وربط الأحداث ببعضها. جرب حل القضايا البسيطة أولاً ثم تدرج للأصعب.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center space-x-2 space-x-reverse">
+                            <input type="text" placeholder="اسأل الوحي عن إرشادات التحقيق..." class="flex-1 bg-surface-light border border-white/10 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-purple-500/50 transition-colors arabic-text" dir="rtl" />
+                            <button class="bg-purple-600 text-white p-2 rounded-lg hover:bg-purple-700 transition-colors">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Achievement Showcase -->
+                <div class="lg:col-span-1 xl:col-span-1">
+                    <div class="card p-6 h-full">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-lg font-cairo font-semibold arabic-text">إنجازات المحقق</h3>
+                            <a href="achievement_gallery.html" class="text-purple-400 hover:text-purple-300 transition-colors">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                </svg>
+                            </a>
+                        </div>
+                        
+                        <div class="space-y-3">
+                            <div class="flex items-center space-x-3 space-x-reverse p-3 bg-accent/10 rounded-lg border border-accent/30 achievement-glow">
+                                <div class="w-10 h-10 bg-accent/20 rounded-full flex items-center justify-center">
+                                    <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                    </svg>
+                                </div>
+                                <div class="flex-1">
+                                    <h5 class="text-sm font-medium text-accent arabic-text">المحقق الماهر</h5>
+                                    <p class="text-xs text-text-muted arabic-text">حل ١٠ قضايا بنجاح</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center space-x-3 space-x-reverse p-3 bg-purple-600/10 rounded-lg border border-purple-600/30">
+                                <div class="w-10 h-10 bg-purple-600/20 rounded-full flex items-center justify-center">
+                                    <svg class="w-5 h-5 text-purple-400" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z"/>
+                                    </svg>
+                                </div>
+                                <div class="flex-1">
+                                    <h5 class="text-sm font-medium text-purple-400 arabic-text">عين الصقر</h5>
+                                    <p class="text-xs text-text-muted arabic-text">اكتشاف ٥٠ دليل مخفي</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center space-x-3 space-x-reverse p-3 bg-secondary/10 rounded-lg border border-secondary/30">
+                                <div class="w-10 h-10 bg-secondary/20 rounded-full flex items-center justify-center">
+                                    <svg class="w-5 h-5 text-secondary" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M12,6A6,6 0 0,0 6,12A6,6 0 0,0 12,18A6,6 0 0,0 18,12A6,6 0 0,0 12,6Z"/>
+                                    </svg>
+                                </div>
+                                <div class="flex-1">
+                                    <h5 class="text-sm font-medium text-secondary arabic-text">عالم اللغة</h5>
+                                    <p class="text-xs text-text-muted arabic-text">إتقان المصطلحات العربية</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-4 text-center">
+                            <p class="text-xs text-text-muted arabic-text">التالي: سيد الألغاز (٣ قضايا أخرى)</p>
+                            <div class="w-full bg-surface-light rounded-full h-1.5 mt-2">
+                                <div class="bg-gradient-to-r from-purple-600 to-accent h-1.5 rounded-full" style="width: 70%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case Difficulty Selector -->
+                <div class="lg:col-span-1 xl:col-span-1">
+                    <div class="card p-6 h-full">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-lg font-cairo font-semibold arabic-text">مستوى الصعوبة</h3>
+                            <button class="text-secondary hover:text-secondary-400 transition-colors">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                </svg>
+                            </button>
+                        </div>
+                        
+                        <div class="space-y-4">
+                            <div class="text-center">
+                                <div class="w-16 h-16 bg-gradient-to-br from-success/20 to-success/40 rounded-full flex items-center justify-center mx-auto mb-3">
+                                    <svg class="w-8 h-8 text-success" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                    </svg>
+                                </div>
+                                <h4 class="text-sm font-medium mb-1 arabic-text">المستوى الحالي</h4>
+                                <p class="text-xs text-success arabic-text">متوسط - مناسب لمهاراتك</p>
+                            </div>
+                            
+                            <div class="grid grid-cols-1 gap-3">
+                                <button class="bg-success/10 text-success border border-success/30 rounded-lg p-3 text-sm font-medium hover:bg-success/20 transition-colors arabic-text">
+                                    مبتدئ - قضايا بسيطة
+                                </button>
+                                <button class="bg-warning/10 text-warning border border-warning/30 rounded-lg p-3 text-sm font-medium hover:bg-warning/20 transition-colors arabic-text">
+                                    متوسط - تحدي معتدل
+                                </button>
+                                <button class="bg-error/10 text-error border border-error/30 rounded-lg p-3 text-sm font-medium hover:bg-error/20 transition-colors arabic-text">
+                                    خبير - قضايا معقدة
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Achievement Notification Toast (Hidden by default) -->
+    <div id="achievement-toast" class="fixed top-24 right-6 z-50 transform translate-x-full transition-transform duration-500 ease-out">
+        <div class="bg-gradient-to-l from-purple-600/90 to-purple-800 rounded-lg p-4 shadow-achievement border border-purple-500/50 max-w-sm">
+            <div class="flex items-center space-x-3 space-x-reverse">
+                <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
+                    <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z"/>
+                    </svg>
+                </div>
+                <div class="flex-1">
+                    <h4 class="text-white font-semibold arabic-text">إنجاز جديد!</h4>
+                    <p class="text-white/90 text-sm arabic-text">محقق الأدلة - اكتشف ٢٥ دليل مخفي</p>
+                    <p class="text-white/70 text-xs">+٣٠٠ نقطة خبرة</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Navigation (Hidden on desktop) -->
+    <nav class="md:hidden fixed bottom-0 left-0 right-0 bg-surface/90 backdrop-blur-md border-t border-white/10 z-40">
+        <div class="grid grid-cols-5 gap-1 p-2">
+            <a href="main_dashboard.html" class="flex flex-col items-center py-2 text-text-secondary">
+                <svg class="w-5 h-5 mb-1" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/>
+                </svg>
+                <span class="text-xs arabic-text">لوحة التحكم</span>
+            </a>
+            <a href="profile_setup.html" class="flex flex-col items-center py-2 text-text-secondary">
+                <svg class="w-5 h-5 mb-1" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                </svg>
+                <span class="text-xs arabic-text">الملف الشخصي</span>
+            </a>
+            <a href="detective_academy.html" class="flex flex-col items-center py-2 text-purple-400">
+                <svg class="w-5 h-5 mb-1" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z"/>
+                </svg>
+                <span class="text-xs arabic-text">المحقق</span>
+            </a>
+            <a href="progress_analytics.html" class="flex flex-col items-center py-2 text-text-secondary">
+                <svg class="w-5 h-5 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                </svg>
+                <span class="text-xs arabic-text">التحليلات</span>
+            </a>
+            <a href="system_settings.html" class="flex flex-col items-center py-2 text-text-secondary">
+                <svg class="w-5 h-5 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                </svg>
+                <span class="text-xs arabic-text">الإعدادات</span>
+            </a>
+        </div>
+    </nav>
+
+    <script>
+        // Achievement notification demo
+        setTimeout(() => {
+            const toast = document.getElementById('achievement-toast');
+            toast.classList.remove('translate-x-full');
+            
+            setTimeout(() => {
+                toast.classList.add('translate-x-full');
+            }, 4000);
+        }, 3000);
+
+        // Evidence hover effects
+        document.addEventListener('DOMContentLoaded', function() {
+            const evidenceItems = document.querySelectorAll('.evidence-hover');
+            evidenceItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    // Add click animation
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = 'scale(1.05)';
+                    }, 100);
+                });
+            });
+
+            // Smooth stat ring animations
+            const statRings = document.querySelectorAll('circle[stroke-dasharray]');
+            statRings.forEach(ring => {
+                ring.style.transition = 'stroke-dashoffset 2s ease-out';
+            });
+        });
+
+        // Case progress animation
+        function updateCaseProgress(percentage) {
+            const progressBar = document.querySelector('.case-progress');
+            progressBar.style.width = percentage + '%';
+        }
+
+        // Simulate case progress update
+        setTimeout(() => {
+            updateCaseProgress(75);
+        }, 2000);
+    </script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>

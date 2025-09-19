@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>System Settings - Solo Leveling Dashboard</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fsololevel3669back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.8"></script>
+</head>
+<body class="bg-background text-text-primary font-inter overflow-x-hidden">
+    <!-- Navigation Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-surface/90 backdrop-blur-md border-b border-white/10">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-gradient-to-br from-secondary to-accent rounded-lg flex items-center justify-center">
+                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z"/>
+                        </svg>
+                    </div>
+                    <h1 class="text-xl font-cairo font-bold text-gradient">Digital Hunter's Guild</h1>
+                </div>
+                
+                <!-- Navigation Links -->
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="main_dashboard.html" class="text-text-secondary hover:text-secondary transition-colors">Dashboard</a>
+                    <a href="profile_setup.html" class="text-text-secondary hover:text-secondary transition-colors">Profile</a>
+                    <a href="detective_academy.html" class="text-text-secondary hover:text-secondary transition-colors">Detective Academy</a>
+                    <a href="progress_analytics.html" class="text-text-secondary hover:text-secondary transition-colors">Analytics</a>
+                    <a href="achievement_gallery.html" class="text-text-secondary hover:text-secondary transition-colors">Achievements</a>
+                    <a href="system_settings.html" class="text-secondary font-medium border-b-2 border-secondary pb-1">Settings</a>
+                </div>
+
+                <!-- User Profile Quick Access -->
+                <div class="flex items-center space-x-4">
+                    <div class="relative">
+                        <button class="w-8 h-8 bg-accent/20 rounded-full flex items-center justify-center text-accent hover:bg-accent/30 transition-colors">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-1-7v2h2v-2h-2zm0-8v6h2V7h-2z"/>
+                            </svg>
+                        </button>
+                        <div class="absolute -top-1 -right-1 w-3 h-3 bg-success rounded-full animate-pulse"></div>
+                    </div>
+                    <div class="w-10 h-10 rounded-full overflow-hidden border-2 border-secondary/50">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=150&auto=format&fit=crop" alt="User Avatar" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Settings Content -->
+    <main class="pt-20 min-h-screen">
+        <!-- Settings Header -->
+        <section class="container mx-auto px-6 py-8">
+            <div class="bg-gradient-to-r from-primary/20 to-secondary/20 rounded-2xl p-8 border border-secondary/30 relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-r from-secondary/5 to-accent/5"></div>
+                <div class="relative z-10">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <div class="w-16 h-16 bg-gradient-to-br from-secondary/20 to-accent/20 rounded-xl flex items-center justify-center">
+                            <svg class="w-8 h-8 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h2 class="text-3xl font-cairo font-bold mb-2">Settings Sanctum</h2>
+                            <p class="text-text-secondary">Customize your hunter experience and optimize your journey</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-6 text-sm">
+                        <div class="flex items-center space-x-2">
+                            <div class="w-3 h-3 bg-success rounded-full animate-pulse"></div>
+                            <span class="text-success">All settings synced</span>
+                        </div>
+                        <div class="text-text-muted">Last updated: September 19, 2025 at 2:22 PM</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Settings Grid Layout -->
+        <section class="container mx-auto px-6 pb-8">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                
+                <!-- Theme & Appearance Settings -->
+                <div class="lg:col-span-2">
+                    <div class="card p-6 mb-6">
+                        <div class="flex items-center justify-between mb-6">
+                            <h3 class="text-xl font-cairo font-semibold flex items-center space-x-3">
+                                <svg class="w-6 h-6 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a2 2 0 002-2V5z"/>
+                                </svg>
+                                <span>Theme & Appearance</span>
+                            </h3>
+                            <div class="flex items-center space-x-2">
+                                <span class="text-xs text-text-muted">Preview Mode</span>
+                                <div class="w-8 h-4 bg-secondary/30 rounded-full relative cursor-pointer">
+                                    <div class="w-3 h-3 bg-secondary rounded-full absolute top-0.5 right-0.5 transition-transform duration-300"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Theme Selection -->
+                        <div class="mb-8">
+                            <h4 class="text-lg font-medium mb-4">Theme Variants</h4>
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                <!-- Dark Hunter Theme (Active) -->
+                                <div class="relative bg-surface-light rounded-lg p-4 border-2 border-secondary cursor-pointer">
+                                    <div class="absolute top-2 right-2">
+                                        <div class="w-4 h-4 bg-secondary rounded-full flex items-center justify-center">
+                                            <svg class="w-2 h-2 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <div class="w-full h-16 bg-gradient-to-r from-background to-surface rounded border border-white/10 mb-2"></div>
+                                        <div class="flex space-x-1">
+                                            <div class="w-3 h-3 bg-secondary rounded-full"></div>
+                                            <div class="w-3 h-3 bg-accent rounded-full"></div>
+                                            <div class="w-3 h-3 bg-success rounded-full"></div>
+                                        </div>
+                                    </div>
+                                    <h5 class="font-medium text-secondary">Dark Hunter</h5>
+                                    <p class="text-xs text-text-muted">Current theme</p>
+                                </div>
+                                
+                                <!-- Midnight Abyss Theme -->
+                                <div class="relative bg-surface-light rounded-lg p-4 border border-white/10 cursor-pointer hover:border-secondary/50 transition-colors">
+                                    <div class="mb-3">
+                                        <div class="w-full h-16 bg-gradient-to-r from-gray-900 to-black rounded border border-purple-500/20 mb-2"></div>
+                                        <div class="flex space-x-1">
+                                            <div class="w-3 h-3 bg-purple-500 rounded-full"></div>
+                                            <div class="w-3 h-3 bg-pink-400 rounded-full"></div>
+                                            <div class="w-3 h-3 bg-indigo-400 rounded-full"></div>
+                                        </div>
+                                    </div>
+                                    <h5 class="font-medium">Midnight Abyss</h5>
+                                    <p class="text-xs text-text-muted">Deep purple accents</p>
+                                </div>
+                                
+                                <!-- Azure Depths Theme -->
+                                <div class="relative bg-surface-light rounded-lg p-4 border border-white/10 cursor-pointer hover:border-secondary/50 transition-colors">
+                                    <div class="mb-3">
+                                        <div class="w-full h-16 bg-gradient-to-r from-blue-900 to-cyan-900 rounded border border-cyan-400/20 mb-2"></div>
+                                        <div class="flex space-x-1">
+                                            <div class="w-3 h-3 bg-cyan-400 rounded-full"></div>
+                                            <div class="w-3 h-3 bg-blue-400 rounded-full"></div>
+                                            <div class="w-3 h-3 bg-teal-400 rounded-full"></div>
+                                        </div>
+                                    </div>
+                                    <h5 class="font-medium">Azure Depths</h5>
+                                    <p class="text-xs text-text-muted">Ocean-inspired</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Color Accent Selection -->
+                        <div class="mb-8">
+                            <h4 class="text-lg font-medium mb-4">Accent Colors</h4>
+                            <div class="flex flex-wrap gap-3">
+                                <button class="w-12 h-12 bg-accent rounded-lg border-2 border-accent shadow-glow-gold relative">
+                                    <div class="absolute inset-0 rounded-lg border-2 border-white/50"></div>
+                                </button>
+                                <button class="w-12 h-12 bg-secondary rounded-lg border-2 border-transparent hover:border-secondary/50 transition-colors"></button>
+                                <button class="w-12 h-12 bg-success rounded-lg border-2 border-transparent hover:border-success/50 transition-colors"></button>
+                                <button class="w-12 h-12 bg-warning rounded-lg border-2 border-transparent hover:border-warning/50 transition-colors"></button>
+                                <button class="w-12 h-12 bg-error rounded-lg border-2 border-transparent hover:border-error/50 transition-colors"></button>
+                                <button class="w-12 h-12 bg-purple-500 rounded-lg border-2 border-transparent hover:border-purple-500/50 transition-colors"></button>
+                                <button class="w-12 h-12 bg-pink-500 rounded-lg border-2 border-transparent hover:border-pink-500/50 transition-colors"></button>
+                                <button class="w-12 h-12 bg-indigo-500 rounded-lg border-2 border-transparent hover:border-indigo-500/50 transition-colors"></button>
+                            </div>
+                        </div>
+                        
+                        <!-- Animation Settings -->
+                        <div>
+                            <h4 class="text-lg font-medium mb-4">Animation & Effects</h4>
+                            <div class="space-y-4">
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <label class="font-medium">Animation Intensity</label>
+                                        <p class="text-sm text-text-muted">Control motion and transition effects</p>
+                                    </div>
+                                    <div class="flex items-center space-x-2">
+                                        <span class="text-sm text-text-muted">Low</span>
+                                        <div class="w-32 h-2 bg-surface-light rounded-full relative">
+                                            <div class="w-20 h-2 bg-secondary rounded-full"></div>
+                                            <div class="w-4 h-4 bg-secondary rounded-full absolute top-0 transform -translate-y-1" style="left: 60px;"></div>
+                                        </div>
+                                        <span class="text-sm text-text-muted">High</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <label class="font-medium">Particle Effects</label>
+                                        <p class="text-sm text-text-muted">Achievement celebrations and interactions</p>
+                                    </div>
+                                    <div class="w-12 h-6 bg-secondary/30 rounded-full relative cursor-pointer">
+                                        <div class="w-5 h-5 bg-secondary rounded-full absolute top-0.5 right-0.5 transition-transform duration-300"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <label class="font-medium">Reduced Motion</label>
+                                        <p class="text-sm text-text-muted">Accessibility option for motion sensitivity</p>
+                                    </div>
+                                    <div class="w-12 h-6 bg-surface-light rounded-full relative cursor-pointer">
+                                        <div class="w-5 h-5 bg-text-muted rounded-full absolute top-0.5 left-0.5 transition-transform duration-300"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Language & Localization -->
+                    <div class="card p-6 mb-6">
+                        <h3 class="text-xl font-cairo font-semibold flex items-center space-x-3 mb-6">
+                            <svg class="w-6 h-6 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"/>
+                            </svg>
+                            <span>Language & Localization</span>
+                        </h3>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="text-lg font-medium mb-4">Primary Language</h4>
+                                <div class="space-y-3">
+                                    <div class="flex items-center space-x-3 p-3 bg-secondary/10 rounded-lg border border-secondary/30">
+                                        <div class="w-6 h-6 bg-secondary/20 rounded flex items-center justify-center">
+                                            <span class="text-xs font-bold text-secondary">EN</span>
+                                        </div>
+                                        <div class="flex-1">
+                                            <div class="font-medium">English</div>
+                                            <div class="text-sm text-text-muted">Left-to-Right (LTR)</div>
+                                        </div>
+                                        <div class="w-4 h-4 bg-secondary rounded-full flex items-center justify-center">
+                                            <svg class="w-2 h-2 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="flex items-center space-x-3 p-3 bg-surface-light rounded-lg border border-white/10 cursor-pointer hover:border-secondary/30 transition-colors">
+                                        <div class="w-6 h-6 bg-accent/20 rounded flex items-center justify-center">
+                                            <span class="text-xs font-bold text-accent">AR</span>
+                                        </div>
+                                        <div class="flex-1">
+                                            <div class="font-medium">العربية</div>
+                                            <div class="text-sm text-text-muted">Right-to-Left (RTL)</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <h4 class="text-lg font-medium mb-4">Regional Settings</h4>
+                                <div class="space-y-4">
+                                    <div>
+                                        <label class="block text-sm font-medium mb-2">Time Zone</label>
+                                        <select class="w-full bg-surface-light border border-white/10 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-secondary/50">
+                                            <option>UTC+03:00 (Riyadh, Kuwait)</option>
+                                            <option>UTC+04:00 (Dubai, Abu Dhabi)</option>
+                                            <option>UTC+02:00 (Cairo, Alexandria)</option>
+                                            <option>UTC+01:00 (Tunis, Algiers)</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div>
+                                        <label class="block text-sm font-medium mb-2">Date Format</label>
+                                        <select class="w-full bg-surface-light border border-white/10 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-secondary/50">
+                                            <option>DD/MM/YYYY (19/09/2025)</option>
+                                            <option>MM/DD/YYYY (09/19/2025)</option>
+                                            <option>YYYY-MM-DD (2025-09-19)</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div>
+                                        <label class="block text-sm font-medium mb-2">Number Format</label>
+                                        <select class="w-full bg-surface-light border border-white/10 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-secondary/50">
+                                            <option>Arabic-Indic (٠١٢٣٤٥٦٧٨٩)</option>
+                                            <option>Western Arabic (0123456789)</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Privacy & Security -->
+                    <div class="card p-6">
+                        <h3 class="text-xl font-cairo font-semibold flex items-center space-x-3 mb-6">
+                            <svg class="w-6 h-6 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                            </svg>
+                            <span>Privacy & Security</span>
+                        </h3>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="text-lg font-medium mb-4">Data Protection</h4>
+                                <div class="space-y-4">
+                                    <div class="flex items-center justify-between">
+                                        <div>
+                                            <label class="font-medium">Data Encryption</label>
+                                            <p class="text-sm text-text-muted">Encrypt sensitive information</p>
+                                        </div>
+                                        <div class="w-12 h-6 bg-secondary/30 rounded-full relative cursor-pointer">
+                                            <div class="w-5 h-5 bg-secondary rounded-full absolute top-0.5 right-0.5 transition-transform duration-300"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="flex items-center justify-between">
+                                        <div>
+                                            <label class="font-medium">Anonymous Analytics</label>
+                                            <p class="text-sm text-text-muted">Help improve the platform</p>
+                                        </div>
+                                        <div class="w-12 h-6 bg-secondary/30 rounded-full relative cursor-pointer">
+                                            <div class="w-5 h-5 bg-secondary rounded-full absolute top-0.5 right-0.5 transition-transform duration-300"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="flex items-center justify-between">
+                                        <div>
+                                            <label class="font-medium">Auto-Backup</label>
+                                            <p class="text-sm text-text-muted">Daily cloud synchronization</p>
+                                        </div>
+                                        <div class="w-12 h-6 bg-secondary/30 rounded-full relative cursor-pointer">
+                                            <div class="w-5 h-5 bg-secondary rounded-full absolute top-0.5 right-0.5 transition-transform duration-300"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <h4 class="text-lg font-medium mb-4">Account Security</h4>
+                                <div class="space-y-3">
+                                    <button class="w-full bg-surface-light border border-white/10 rounded-lg px-4 py-3 text-left hover:border-secondary/30 transition-colors">
+                                        <div class="flex items-center justify-between">
+                                            <div>
+                                                <div class="font-medium">Change Password</div>
+                                                <div class="text-sm text-text-muted">Last changed 3 months ago</div>
+                                            </div>
+                                            <svg class="w-4 h-4 text-text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                            </svg>
+                                        </div>
+                                    </button>
+                                    
+                                    <button class="w-full bg-surface-light border border-white/10 rounded-lg px-4 py-3 text-left hover:border-secondary/30 transition-colors">
+                                        <div class="flex items-center justify-between">
+                                            <div>
+                                                <div class="font-medium">Export Data</div>
+                                                <div class="text-sm text-text-muted">Download your complete profile</div>
+                                            </div>
+                                            <svg class="w-4 h-4 text-text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                                            </svg>
+                                        </div>
+                                    </button>
+                                    
+                                    <button class="w-full bg-error/10 border border-error/30 rounded-lg px-4 py-3 text-left hover:border-error/50 transition-colors">
+                                        <div class="flex items-center justify-between">
+                                            <div>
+                                                <div class="font-medium text-error">Delete Account</div>
+                                                <div class="text-sm text-text-muted">Permanently remove all data</div>
+                                            </div>
+                                            <svg class="w-4 h-4 text-error" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
+                                            </svg>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Sidebar Settings -->
+                <div class="space-y-6">
+                    <!-- Notification Settings -->
+                    <div class="card p-6">
+                        <h3 class="text-xl font-cairo font-semibold flex items-center space-x-3 mb-6">
+                            <svg class="w-6 h-6 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-5 5v-5zM4.868 19.718A8.966 8.966 0 003 12a9 9 0 0118 0 8.966 8.966 0 00-1.868 7.718"/>
+                            </svg>
+                            <span>Notifications</span>
+                        </h3>
+                        
+                        <div class="space-y-4">
+                            <!-- Prayer Time Reminders -->
+                            <div class="bg-accent/10 rounded-lg p-4 border border-accent/30">
+                                <div class="flex items-center justify-between mb-3">
+                                    <div class="flex items-center space-x-3">
+                                        <div class="w-8 h-8 bg-accent/20 rounded-full flex items-center justify-center">
+                                            <svg class="w-4 h-4 text-accent" fill="currentColor" viewBox="0 0 24 24">
+                                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-medium text-accent">Prayer Reminders</h4>
+                                            <p class="text-sm text-text-muted">Islamic prayer time notifications</p>
+                                        </div>
+                                    </div>
+                                    <div class="w-12 h-6 bg-accent/30 rounded-full relative cursor-pointer">
+                                        <div class="w-5 h-5 bg-accent rounded-full absolute top-0.5 right-0.5 transition-transform duration-300"></div>
+                                    </div>
+                                </div>
+                                <div class="text-sm text-text-muted">
+                                    Next: Maghrib in 3 hours 45 minutes
+                                </div>
+                            </div>
+                            
+                            <!-- Task Reminders -->
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h4 class="font-medium">Task Deadlines</h4>
+                                    <p class="text-sm text-text-muted">Quest completion reminders</p>
+                                </div>
+                                <div class="w-12 h-6 bg-secondary/30 rounded-full relative cursor-pointer">
+                                    <div class="w-5 h-5 bg-secondary rounded-full absolute top-0.5 right-0.5 transition-transform duration-300"></div>
+                                </div>
+                            </div>
+                            
+                            <!-- Achievement Notifications -->
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h4 class="font-medium">Achievement Unlocks</h4>
+                                    <p class="text-sm text-text-muted">Trophy and milestone celebrations</p>
+                                </div>
+                                <div class="w-12 h-6 bg-secondary/30 rounded-full relative cursor-pointer">
+                                    <div class="w-5 h-5 bg-secondary rounded-full absolute top-0.5 right-0.5 transition-transform duration-300"></div>
+                                </div>
+                            </div>
+                            
+                            <!-- Level Up Notifications -->
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h4 class="font-medium">Level Progression</h4>
+                                    <p class="text-sm text-text-muted">Stat increases and level ups</p>
+                                </div>
+                                <div class="w-12 h-6 bg-secondary/30 rounded-full relative cursor-pointer">
+                                    <div class="w-5 h-5 bg-secondary rounded-full absolute top-0.5 right-0.5 transition-transform duration-300"></div>
+                                </div>
+                            </div>
+                            
+                            <!-- Quiet Hours -->
+                            <div class="mt-6 pt-4 border-t border-white/10">
+                                <h4 class="font-medium mb-3">Quiet Hours</h4>
+                                <div class="flex items-center space-x-4">
+                                    <div class="flex-1">
+                                        <label class="block text-sm text-text-muted mb-1">From</label>
+                                        <input type="time" value="22:00" class="w-full bg-surface-light border border-white/10 rounded px-3 py-2 text-sm focus:outline-none focus:border-secondary/50" />
+                                    </div>
+                                    <div class="flex-1">
+                                        <label class="block text-sm text-text-muted mb-1">To</label>
+                                        <input type="time" value="07:00" class="w-full bg-surface-light border border-white/10 rounded px-3 py-2 text-sm focus:outline-none focus:border-secondary/50" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Audio Settings -->
+                    <div class="card p-6">
+                        <h3 class="text-xl font-cairo font-semibold flex items-center space-x-3 mb-6">
+                            <svg class="w-6 h-6 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"/>
+                            </svg>
+                            <span>Audio & Sound</span>
+                        </h3>
+                        
+                        <div class="space-y-6">
+                            <!-- Master Volume -->
+                            <div>
+                                <div class="flex items-center justify-between mb-2">
+                                    <label class="font-medium">Master Volume</label>
+                                    <span class="text-sm text-text-muted">75%</span>
+                                </div>
+                                <div class="w-full h-2 bg-surface-light rounded-full relative">
+                                    <div class="w-3/4 h-2 bg-secondary rounded-full"></div>
+                                    <div class="w-4 h-4 bg-secondary rounded-full absolute top-0 transform -translate-y-1" style="left: 75%;"></div>
+                                </div>
+                            </div>
+                            
+                            <!-- Sound Effects -->
+                            <div>
+                                <div class="flex items-center justify-between mb-2">
+                                    <label class="font-medium">Sound Effects</label>
+                                    <span class="text-sm text-text-muted">60%</span>
+                                </div>
+                                <div class="w-full h-2 bg-surface-light rounded-full relative">
+                                    <div class="w-3/5 h-2 bg-accent rounded-full"></div>
+                                    <div class="w-4 h-4 bg-accent rounded-full absolute top-0 transform -translate-y-1" style="left: 60%;"></div>
+                                </div>
+                            </div>
+                            
+                            <!-- Background Music -->
+                            <div>
+                                <div class="flex items-center justify-between mb-2">
+                                    <label class="font-medium">Background Music</label>
+                                    <span class="text-sm text-text-muted">30%</span>
+                                </div>
+                                <div class="w-full h-2 bg-surface-light rounded-full relative">
+                                    <div class="w-1/3 h-2 bg-success rounded-full"></div>
+                                    <div class="w-4 h-4 bg-success rounded-full absolute top-0 transform -translate-y-1" style="left: 30%;"></div>
+                                </div>
+                            </div>
+                            
+                            <!-- Cultural Sensitivity -->
+                            <div class="pt-4 border-t border-white/10">
+                                <div class="flex items-center justify-between mb-4">
+                                    <div>
+                                        <h4 class="font-medium">Cultural Sensitivity</h4>
+                                        <p class="text-sm text-text-muted">Respectful audio during prayer times</p>
+                                    </div>
+                                    <div class="w-12 h-6 bg-secondary/30 rounded-full relative cursor-pointer">
+                                        <div class="w-5 h-5 bg-secondary rounded-full absolute top-0.5 right-0.5 transition-transform duration-300"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <h4 class="font-medium">Achievement Sounds</h4>
+                                        <p class="text-sm text-text-muted">Audio feedback for completions</p>
+                                    </div>
+                                    <div class="w-12 h-6 bg-secondary/30 rounded-full relative cursor-pointer">
+                                        <div class="w-5 h-5 bg-secondary rounded-full absolute top-0.5 right-0.5 transition-transform duration-300"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Integration Settings -->
+                    <div class="card p-6">
+                        <h3 class="text-xl font-cairo font-semibold flex items-center space-x-3 mb-6">
+                            <svg class="w-6 h-6 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/>
+                            </svg>
+                            <span>Integrations</span>
+                        </h3>
+                        
+                        <div class="space-y-4">
+                            <!-- Calendar Integration -->
+                            <div class="flex items-center justify-between p-3 bg-surface-light rounded-lg border border-white/10">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-8 h-8 bg-success/20 rounded flex items-center justify-center">
+                                        <svg class="w-4 h-4 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium">Google Calendar</h4>
+                                        <p class="text-sm text-success">Connected</p>
+                                    </div>
+                                </div>
+                                <button class="text-sm text-text-muted hover:text-secondary transition-colors">Configure</button>
+                            </div>
+                            
+                            <!-- Fitness Tracker -->
+                            <div class="flex items-center justify-between p-3 bg-surface-light rounded-lg border border-white/10">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-8 h-8 bg-text-muted/20 rounded flex items-center justify-center">
+                                        <svg class="w-4 h-4 text-text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium">Fitness Tracker</h4>
+                                        <p class="text-sm text-text-muted">Not connected</p>
+                                    </div>
+                                </div>
+                                <button class="text-sm text-secondary hover:text-secondary-400 transition-colors">Connect</button>
+                            </div>
+                            
+                            <!-- Productivity Apps -->
+                            <div class="flex items-center justify-between p-3 bg-surface-light rounded-lg border border-white/10">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-8 h-8 bg-warning/20 rounded flex items-center justify-center">
+                                        <svg class="w-4 h-4 text-warning" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium">Todoist</h4>
+                                        <p class="text-sm text-warning">Partially synced</p>
+                                    </div>
+                                </div>
+                                <button class="text-sm text-text-muted hover:text-secondary transition-colors">Manage</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Settings Action Bar -->
+        <section class="container mx-auto px-6 pb-8">
+            <div class="card p-6">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-3 h-3 bg-success rounded-full animate-pulse"></div>
+                        <span class="text-sm text-success">All changes saved automatically</span>
+                        <span class="text-sm text-text-muted">•</span>
+                        <span class="text-sm text-text-muted">Last sync: Just now</span>
+                    </div>
+                    
+                    <div class="flex items-center space-x-3">
+                        <button class="px-4 py-2 bg-surface-light text-text-secondary border border-white/10 rounded-lg hover:border-secondary/30 transition-colors">
+                            Reset to Defaults
+                        </button>
+                        <button class="px-4 py-2 bg-secondary text-white rounded-lg hover:bg-secondary-600 transition-colors">
+                            Export Settings
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Mobile Navigation (Hidden on desktop) -->
+    <nav class="md:hidden fixed bottom-0 left-0 right-0 bg-surface/90 backdrop-blur-md border-t border-white/10 z-40">
+        <div class="grid grid-cols-5 gap-1 p-2">
+            <a href="main_dashboard.html" class="flex flex-col items-center py-2 text-text-secondary">
+                <svg class="w-5 h-5 mb-1" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/>
+                </svg>
+                <span class="text-xs">Dashboard</span>
+            </a>
+            <a href="profile_setup.html" class="flex flex-col items-center py-2 text-text-secondary">
+                <svg class="w-5 h-5 mb-1" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                </svg>
+                <span class="text-xs">Profile</span>
+            </a>
+            <a href="detective_academy.html" class="flex flex-col items-center py-2 text-text-secondary">
+                <svg class="w-5 h-5 mb-1" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                </svg>
+                <span class="text-xs">Detective</span>
+            </a>
+            <a href="progress_analytics.html" class="flex flex-col items-center py-2 text-text-secondary">
+                <svg class="w-5 h-5 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                </svg>
+                <span class="text-xs">Analytics</span>
+            </a>
+            <a href="system_settings.html" class="flex flex-col items-center py-2 text-secondary">
+                <svg class="w-5 h-5 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                </svg>
+                <span class="text-xs">Settings</span>
+            </a>
+        </div>
+    </nav>
+
+    <script>
+        // Toggle switches functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const toggles = document.querySelectorAll('.w-12.h-6');
+            
+            toggles.forEach(toggle => {
+                toggle.addEventListener('click', function() {
+                    const slider = this.querySelector('div');
+                    const isActive = slider.classList.contains('right-0.5');
+                    
+                    if (isActive) {
+                        slider.classList.remove('right-0.5');
+                        slider.classList.add('left-0.5');
+                        this.classList.remove('bg-secondary/30');
+                        this.classList.add('bg-surface-light');
+                        slider.classList.remove('bg-secondary');
+                        slider.classList.add('bg-text-muted');
+                    } else {
+                        slider.classList.remove('left-0.5');
+                        slider.classList.add('right-0.5');
+                        this.classList.remove('bg-surface-light');
+                        this.classList.add('bg-secondary/30');
+                        slider.classList.remove('bg-text-muted');
+                        slider.classList.add('bg-secondary');
+                    }
+                });
+            });
+        });
+
+        // Theme selection functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const themeCards = document.querySelectorAll('.cursor-pointer');
+            
+            themeCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    // Remove active state from all cards
+                    themeCards.forEach(c => {
+                        c.classList.remove('border-secondary');
+                        c.classList.add('border-white/10');
+                        const checkmark = c.querySelector('.absolute.top-2.right-2');
+                        if (checkmark) checkmark.style.display = 'none';
+                    });
+                    
+                    // Add active state to clicked card
+                    this.classList.remove('border-white/10');
+                    this.classList.add('border-secondary');
+                    
+                    // Show checkmark
+                    let checkmark = this.querySelector('.absolute.top-2.right-2');
+                    if (!checkmark) {
+                        checkmark = document.createElement('div');
+                        checkmark.className = 'absolute top-2 right-2';
+                        checkmark.innerHTML = `
+                            <div class="w-4 h-4 bg-secondary rounded-full flex items-center justify-center">
+                                <svg class="w-2 h-2 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                            </div>
+                        `;
+                        this.appendChild(checkmark);
+                    }
+                    checkmark.style.display = 'block';
+                });
+            });
+        });
+
+        // Slider functionality for volume controls
+        document.addEventListener('DOMContentLoaded', function() {
+            const sliders = document.querySelectorAll('.w-full.h-2.bg-surface-light');
+            
+            sliders.forEach(slider => {
+                const handle = slider.querySelector('.w-4.h-4');
+                const fill = slider.querySelector('div:first-child');
+                
+                if (handle && fill) {
+                    slider.addEventListener('click', function(e) {
+                        const rect = this.getBoundingClientRect();
+                        const percentage = (e.clientX - rect.left) / rect.width * 100;
+                        
+                        fill.style.width = percentage + '%';
+                        handle.style.left = percentage + '%';
+                        
+                        // Update percentage display
+                        const percentageDisplay = this.parentElement.querySelector('.text-sm.text-text-muted');
+                        if (percentageDisplay) {
+                            percentageDisplay.textContent = Math.round(percentage) + '%';
+                        }
+                    });
+                }
+            });
+        });
+
+        // Auto-save indication
+        let saveTimeout;
+        document.addEventListener('change', function() {
+            clearTimeout(saveTimeout);
+            
+            // Show saving indicator
+            const saveIndicator = document.querySelector('.text-success');
+            if (saveIndicator) {
+                saveIndicator.textContent = 'Saving changes...';
+                saveIndicator.classList.remove('text-success');
+                saveIndicator.classList.add('text-warning');
+            }
+            
+            // Simulate save completion
+            saveTimeout = setTimeout(() => {
+                if (saveIndicator) {
+                    saveIndicator.textContent = 'All changes saved automatically';
+                    saveIndicator.classList.remove('text-warning');
+                    saveIndicator.classList.add('text-success');
+                }
+            }, 1500);
+        });
+    </script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>

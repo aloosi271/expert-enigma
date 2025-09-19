@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Achievement Gallery - Solo Leveling Dashboard</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fsololevel3669back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.8"></script>
+</head>
+<body class="bg-background text-text-primary font-inter overflow-x-hidden">
+    <!-- Navigation Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-surface/90 backdrop-blur-md border-b border-white/10">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-gradient-to-br from-secondary to-accent rounded-lg flex items-center justify-center">
+                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z"/>
+                        </svg>
+                    </div>
+                    <h1 class="text-xl font-cairo font-bold text-gradient">Digital Hunter's Guild</h1>
+                </div>
+                
+                <!-- Navigation Links -->
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="main_dashboard.html" class="text-text-secondary hover:text-secondary transition-colors">Dashboard</a>
+                    <a href="profile_setup.html" class="text-text-secondary hover:text-secondary transition-colors">Profile</a>
+                    <a href="detective_academy.html" class="text-text-secondary hover:text-secondary transition-colors">Detective Academy</a>
+                    <a href="progress_analytics.html" class="text-text-secondary hover:text-secondary transition-colors">Analytics</a>
+                    <a href="achievement_gallery.html" class="text-secondary font-medium border-b-2 border-secondary pb-1">Achievements</a>
+                    <a href="system_settings.html" class="text-text-secondary hover:text-secondary transition-colors">Settings</a>
+                </div>
+
+                <!-- User Profile Quick Access -->
+                <div class="flex items-center space-x-4">
+                    <div class="relative">
+                        <button class="w-8 h-8 bg-accent/20 rounded-full flex items-center justify-center text-accent hover:bg-accent/30 transition-colors">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-1-7v2h2v-2h-2zm0-8v6h2V7h-2z"/>
+                            </svg>
+                        </button>
+                        <div class="absolute -top-1 -right-1 w-3 h-3 bg-success rounded-full animate-pulse"></div>
+                    </div>
+                    <div class="w-10 h-10 rounded-full overflow-hidden border-2 border-secondary/50">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=150&auto=format&fit=crop" alt="User Avatar" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Achievement Gallery Content -->
+    <main class="pt-20 min-h-screen">
+        <!-- Hero Banner -->
+        <section class="container mx-auto px-6 py-8">
+            <div class="bg-gradient-to-r from-accent/20 to-secondary/20 rounded-2xl p-8 border border-accent/30 relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-r from-accent/5 to-secondary/5"></div>
+                <div class="relative z-10">
+                    <div class="flex items-center justify-between mb-4">
+                        <div>
+                            <h2 class="text-3xl font-cairo font-bold mb-2">Trophy Vault</h2>
+                            <p class="text-text-secondary">Your legendary achievements and epic milestones</p>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-3xl font-orbitron font-bold text-accent">47</div>
+                            <div class="text-sm text-text-secondary">Trophies Unlocked</div>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
+                        <div class="bg-surface-light rounded-lg p-4 text-center">
+                            <div class="text-2xl font-bold text-accent">12</div>
+                            <div class="text-xs text-text-secondary">Legendary</div>
+                        </div>
+                        <div class="bg-surface-light rounded-lg p-4 text-center">
+                            <div class="text-2xl font-bold text-secondary">18</div>
+                            <div class="text-xs text-text-secondary">Epic</div>
+                        </div>
+                        <div class="bg-surface-light rounded-lg p-4 text-center">
+                            <div class="text-2xl font-bold text-success">17</div>
+                            <div class="text-xs text-text-secondary">Rare</div>
+                        </div>
+                        <div class="bg-surface-light rounded-lg p-4 text-center">
+                            <div class="text-2xl font-bold text-text-secondary">23</div>
+                            <div class="text-xs text-text-secondary">Locked</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievement Categories -->
+        <section class="container mx-auto px-6 pb-8">
+            <!-- Category Filter Tabs -->
+            <div class="flex flex-wrap gap-2 mb-8">
+                <button class="px-4 py-2 bg-secondary text-white rounded-lg font-medium text-sm transition-colors" data-category="all">
+                    All Achievements
+                </button>
+                <button class="px-4 py-2 bg-surface-light text-text-secondary rounded-lg font-medium text-sm hover:bg-secondary/20 hover:text-secondary transition-colors" data-category="consistency">
+                    Consistency Master
+                </button>
+                <button class="px-4 py-2 bg-surface-light text-text-secondary rounded-lg font-medium text-sm hover:bg-secondary/20 hover:text-secondary transition-colors" data-category="skill">
+                    Skill Warrior
+                </button>
+                <button class="px-4 py-2 bg-surface-light text-text-secondary rounded-lg font-medium text-sm hover:bg-secondary/20 hover:text-secondary transition-colors" data-category="detective">
+                    Detective Scholar
+                </button>
+                <button class="px-4 py-2 bg-surface-light text-text-secondary rounded-lg font-medium text-sm hover:bg-secondary/20 hover:text-secondary transition-colors" data-category="transformation">
+                    Transformation Legend
+                </button>
+            </div>
+
+            <!-- Achievement Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                
+                <!-- Legendary Achievement - Unlocked -->
+                <div class="card p-6 achievement-glow hover:scale-105 transition-all duration-300 cursor-pointer group" data-category="consistency">
+                    <div class="text-center">
+                        <div class="relative mb-4">
+                            <div class="w-20 h-20 bg-gradient-to-br from-accent to-accent/70 rounded-full flex items-center justify-center mx-auto shadow-glow-gold group-hover:animate-bounce-subtle">
+                                <svg class="w-10 h-10 text-background" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                </svg>
+                            </div>
+                            <div class="absolute -top-2 -right-2 bg-accent text-background text-xs font-bold px-2 py-1 rounded-full">
+                                LEGENDARY
+                            </div>
+                            <div class="absolute inset-0 rounded-full border-2 border-accent/50 animate-pulse-slow"></div>
+                        </div>
+                        
+                        <h3 class="text-lg font-cairo font-bold text-accent mb-2">Iron Will Forged</h3>
+                        <p class="text-sm text-text-secondary mb-3">Through 100 days of unwavering dedication, you have forged an unbreakable spirit</p>
+                        
+                        <div class="bg-surface-light rounded-lg p-3 mb-3">
+                            <div class="text-xs text-text-muted mb-1">Unlocked on</div>
+                            <div class="text-sm font-medium text-accent">September 15, 2025</div>
+                        </div>
+                        
+                        <div class="flex items-center justify-between text-xs">
+                            <span class="text-accent font-medium">+2,500 XP</span>
+                            <span class="text-text-muted">100-day streak</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Epic Achievement - Unlocked -->
+                <div class="card p-6 border-secondary/50 hover:scale-105 transition-all duration-300 cursor-pointer group" data-category="skill">
+                    <div class="text-center">
+                        <div class="relative mb-4">
+                            <div class="w-20 h-20 bg-gradient-to-br from-secondary to-secondary/70 rounded-full flex items-center justify-center mx-auto shadow-glow-blue group-hover:animate-bounce-subtle">
+                                <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                </svg>
+                            </div>
+                            <div class="absolute -top-2 -right-2 bg-secondary text-white text-xs font-bold px-2 py-1 rounded-full">
+                                EPIC
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-lg font-cairo font-bold text-secondary mb-2">Mind Sharpened</h3>
+                        <p class="text-sm text-text-secondary mb-3">Your intellect has reached new heights through dedicated study</p>
+                        
+                        <div class="bg-surface-light rounded-lg p-3 mb-3">
+                            <div class="text-xs text-text-muted mb-1">Unlocked on</div>
+                            <div class="text-sm font-medium text-secondary">September 12, 2025</div>
+                        </div>
+                        
+                        <div class="flex items-center justify-between text-xs">
+                            <span class="text-secondary font-medium">+1,500 XP</span>
+                            <span class="text-text-muted">Intelligence +25</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Detective Achievement - Unlocked -->
+                <div class="card p-6 border-purple-500/50 hover:scale-105 transition-all duration-300 cursor-pointer group" data-category="detective">
+                    <div class="text-center">
+                        <div class="relative mb-4">
+                            <div class="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center mx-auto group-hover:animate-bounce-subtle">
+                                <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                                </svg>
+                            </div>
+                            <div class="absolute -top-2 -right-2 bg-purple-500 text-white text-xs font-bold px-2 py-1 rounded-full">
+                                RARE
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-lg font-cairo font-bold text-purple-400 mb-2">Master Detective</h3>
+                        <p class="text-sm text-text-secondary mb-3">Your deductive prowess has solved the most complex mysteries</p>
+                        
+                        <div class="bg-surface-light rounded-lg p-3 mb-3">
+                            <div class="text-xs text-text-muted mb-1">Unlocked on</div>
+                            <div class="text-sm font-medium text-purple-400">September 10, 2025</div>
+                        </div>
+                        
+                        <div class="flex items-center justify-between text-xs">
+                            <span class="text-purple-400 font-medium">+1,200 XP</span>
+                            <span class="text-text-muted">50 cases solved</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Transformation Achievement - Unlocked -->
+                <div class="card p-6 border-success/50 hover:scale-105 transition-all duration-300 cursor-pointer group" data-category="transformation">
+                    <div class="text-center">
+                        <div class="relative mb-4">
+                            <div class="w-20 h-20 bg-gradient-to-br from-success to-success/70 rounded-full flex items-center justify-center mx-auto group-hover:animate-bounce-subtle">
+                                <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                </svg>
+                            </div>
+                            <div class="absolute -top-2 -right-2 bg-success text-white text-xs font-bold px-2 py-1 rounded-full">
+                                RARE
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-lg font-cairo font-bold text-success mb-2">Phoenix Rising</h3>
+                        <p class="text-sm text-text-secondary mb-3">From the ashes of old habits, a new champion emerges</p>
+                        
+                        <div class="bg-surface-light rounded-lg p-3 mb-3">
+                            <div class="text-xs text-text-muted mb-1">Unlocked on</div>
+                            <div class="text-sm font-medium text-success">September 8, 2025</div>
+                        </div>
+                        
+                        <div class="flex items-center justify-between text-xs">
+                            <span class="text-success font-medium">+2,000 XP</span>
+                            <span class="text-text-muted">Major milestone</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Locked Achievement 1 -->
+                <div class="card p-6 opacity-50 hover:opacity-70 transition-all duration-300 cursor-pointer group" data-category="consistency">
+                    <div class="text-center">
+                        <div class="relative mb-4">
+                            <div class="w-20 h-20 bg-surface-light rounded-full flex items-center justify-center mx-auto border-2 border-dashed border-text-muted">
+                                <svg class="w-10 h-10 text-text-muted" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/>
+                                </svg>
+                            </div>
+                            <div class="absolute -top-2 -right-2 bg-text-muted text-background text-xs font-bold px-2 py-1 rounded-full">
+                                LOCKED
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-lg font-cairo font-bold text-text-muted mb-2">Eternal Guardian</h3>
+                        <p class="text-sm text-text-secondary mb-3">Maintain a 365-day streak to unlock this legendary achievement</p>
+                        
+                        <div class="bg-surface-light rounded-lg p-3 mb-3">
+                            <div class="text-xs text-text-muted mb-1">Progress</div>
+                            <div class="w-full bg-surface rounded-full h-2 mb-2">
+                                <div class="bg-secondary h-2 rounded-full" style="width: 27%"></div>
+                            </div>
+                            <div class="text-sm font-medium text-text-secondary">100 / 365 days</div>
+                        </div>
+                        
+                        <div class="flex items-center justify-between text-xs">
+                            <span class="text-text-muted font-medium">+5,000 XP</span>
+                            <span class="text-text-muted">265 days left</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Locked Achievement 2 -->
+                <div class="card p-6 opacity-50 hover:opacity-70 transition-all duration-300 cursor-pointer group" data-category="skill">
+                    <div class="text-center">
+                        <div class="relative mb-4">
+                            <div class="w-20 h-20 bg-surface-light rounded-full flex items-center justify-center mx-auto border-2 border-dashed border-text-muted">
+                                <svg class="w-10 h-10 text-text-muted" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/>
+                                </svg>
+                            </div>
+                            <div class="absolute -top-2 -right-2 bg-text-muted text-background text-xs font-bold px-2 py-1 rounded-full">
+                                LOCKED
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-lg font-cairo font-bold text-text-muted mb-2">Omniscient Sage</h3>
+                        <p class="text-sm text-text-secondary mb-3">Reach maximum level in all six core attributes</p>
+                        
+                        <div class="bg-surface-light rounded-lg p-3 mb-3">
+                            <div class="text-xs text-text-muted mb-1">Progress</div>
+                            <div class="grid grid-cols-3 gap-1 mb-2">
+                                <div class="w-full bg-secondary rounded-full h-1"></div>
+                                <div class="w-full bg-accent rounded-full h-1"></div>
+                                <div class="w-full bg-success rounded-full h-1"></div>
+                                <div class="w-full bg-surface rounded-full h-1"></div>
+                                <div class="w-full bg-surface rounded-full h-1"></div>
+                                <div class="w-full bg-surface rounded-full h-1"></div>
+                            </div>
+                            <div class="text-sm font-medium text-text-secondary">3 / 6 maxed</div>
+                        </div>
+                        
+                        <div class="flex items-center justify-between text-xs">
+                            <span class="text-text-muted font-medium">+10,000 XP</span>
+                            <span class="text-text-muted">3 remaining</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Achievement - Just Unlocked -->
+                <div class="card p-6 border-accent/50 hover:scale-105 transition-all duration-300 cursor-pointer group relative overflow-hidden" data-category="consistency">
+                    <div class="absolute inset-0 bg-gradient-to-r from-accent/5 to-transparent animate-pulse"></div>
+                    <div class="text-center relative z-10">
+                        <div class="relative mb-4">
+                            <div class="w-20 h-20 bg-gradient-to-br from-accent/80 to-accent rounded-full flex items-center justify-center mx-auto shadow-glow-gold group-hover:animate-bounce-subtle">
+                                <svg class="w-10 h-10 text-background" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                </svg>
+                            </div>
+                            <div class="absolute -top-2 -right-2 bg-accent text-background text-xs font-bold px-2 py-1 rounded-full animate-pulse">
+                                NEW!
+                            </div>
+                            <div class="absolute inset-0 rounded-full border-2 border-accent animate-pulse"></div>
+                        </div>
+                        
+                        <h3 class="text-lg font-cairo font-bold text-accent mb-2">Morning Warrior</h3>
+                        <p class="text-sm text-text-secondary mb-3">Dawn breaks, and so do your limits - 30 morning workouts conquered</p>
+                        
+                        <div class="bg-surface-light rounded-lg p-3 mb-3">
+                            <div class="text-xs text-text-muted mb-1">Just unlocked!</div>
+                            <div class="text-sm font-medium text-accent">September 19, 2025</div>
+                        </div>
+                        
+                        <div class="flex items-center justify-between text-xs">
+                            <span class="text-accent font-medium">+800 XP</span>
+                            <span class="text-text-muted">30 mornings</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- More Locked Achievements -->
+                <div class="card p-6 opacity-50 hover:opacity-70 transition-all duration-300 cursor-pointer group" data-category="detective">
+                    <div class="text-center">
+                        <div class="relative mb-4">
+                            <div class="w-20 h-20 bg-surface-light rounded-full flex items-center justify-center mx-auto border-2 border-dashed border-text-muted">
+                                <svg class="w-10 h-10 text-text-muted" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/>
+                                </svg>
+                            </div>
+                            <div class="absolute -top-2 -right-2 bg-text-muted text-background text-xs font-bold px-2 py-1 rounded-full">
+                                LOCKED
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-lg font-cairo font-bold text-text-muted mb-2">Sherlock's Heir</h3>
+                        <p class="text-sm text-text-secondary mb-3">Solve 100 detective cases with perfect accuracy</p>
+                        
+                        <div class="bg-surface-light rounded-lg p-3 mb-3">
+                            <div class="text-xs text-text-muted mb-1">Progress</div>
+                            <div class="w-full bg-surface rounded-full h-2 mb-2">
+                                <div class="bg-purple-500 h-2 rounded-full" style="width: 50%"></div>
+                            </div>
+                            <div class="text-sm font-medium text-text-secondary">50 / 100 cases</div>
+                        </div>
+                        
+                        <div class="flex items-center justify-between text-xs">
+                            <span class="text-text-muted font-medium">+3,000 XP</span>
+                            <span class="text-text-muted">50 cases left</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Achievement Progress Section -->
+            <div class="mt-12">
+                <h3 class="text-2xl font-cairo font-bold mb-6">Current Pursuits</h3>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <!-- Active Achievement Hunt 1 -->
+                    <div class="card p-6 border-secondary/30">
+                        <div class="flex items-center space-x-4 mb-4">
+                            <div class="w-16 h-16 bg-gradient-to-br from-secondary/20 to-secondary/40 rounded-full flex items-center justify-center">
+                                <svg class="w-8 h-8 text-secondary" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                </svg>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="text-lg font-cairo font-semibold text-secondary">Speed Reader</h4>
+                                <p class="text-sm text-text-secondary">Read 1,000 pages in a single month</p>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-3">
+                            <div class="flex justify-between text-sm">
+                                <span class="text-text-secondary">Progress</span>
+                                <span class="text-secondary font-medium">687 / 1,000 pages</span>
+                            </div>
+                            <div class="w-full bg-surface-light rounded-full h-3">
+                                <div class="bg-gradient-to-r from-secondary to-secondary-400 h-3 rounded-full" style="width: 68.7%"></div>
+                            </div>
+                            <div class="flex justify-between text-xs text-text-muted">
+                                <span>11 days remaining</span>
+                                <span>~28 pages/day needed</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Active Achievement Hunt 2 -->
+                    <div class="card p-6 border-success/30">
+                        <div class="flex items-center space-x-4 mb-4">
+                            <div class="w-16 h-16 bg-gradient-to-br from-success/20 to-success/40 rounded-full flex items-center justify-center">
+                                <svg class="w-8 h-8 text-success" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                </svg>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="text-lg font-cairo font-semibold text-success">Strength Ascendant</h4>
+                                <p class="text-sm text-text-secondary">Reach 90+ Strength attribute level</p>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-3">
+                            <div class="flex justify-between text-sm">
+                                <span class="text-text-secondary">Current Level</span>
+                                <span class="text-success font-medium">70 / 90</span>
+                            </div>
+                            <div class="w-full bg-surface-light rounded-full h-3">
+                                <div class="bg-gradient-to-r from-success to-success-400 h-3 rounded-full" style="width: 77.8%"></div>
+                            </div>
+                            <div class="flex justify-between text-xs text-text-muted">
+                                <span>20 levels to go</span>
+                                <span>~3 workouts/week</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Social Sharing Section -->
+            <div class="mt-12">
+                <div class="card p-6 bg-gradient-to-r from-primary/10 to-secondary/10 border-primary/30">
+                    <div class="text-center">
+                        <h3 class="text-xl font-cairo font-bold mb-2">Share Your Triumph</h3>
+                        <p class="text-text-secondary mb-6">Let the world witness your legendary achievements</p>
+                        
+                        <div class="flex justify-center space-x-4">
+                            <button class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-medium transition-colors flex items-center space-x-2">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                                </svg>
+                                <span>Twitter</span>
+                            </button>
+                            <button class="bg-blue-800 hover:bg-blue-900 text-white px-6 py-2 rounded-lg font-medium transition-colors flex items-center space-x-2">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                                </svg>
+                                <span>Facebook</span>
+                            </button>
+                            <button class="bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white px-6 py-2 rounded-lg font-medium transition-colors flex items-center space-x-2">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24.009c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001 12.017.001z"/>
+                                </svg>
+                                <span>Pinterest</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Achievement Detail Modal (Hidden by default) -->
+    <div id="achievement-modal" class="fixed inset-0 z-50 hidden">
+        <div class="absolute inset-0 bg-background/80 backdrop-blur-sm" onclick="closeModal()"></div>
+        <div class="relative z-10 flex items-center justify-center min-h-screen p-4">
+            <div class="bg-surface rounded-2xl p-8 max-w-md w-full border border-secondary/30 transform scale-95 transition-transform duration-300">
+                <div class="text-center">
+                    <div class="w-24 h-24 bg-gradient-to-br from-accent to-accent/70 rounded-full flex items-center justify-center mx-auto mb-4 shadow-glow-gold">
+                        <svg class="w-12 h-12 text-background" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                    </div>
+                    
+                    <h3 class="text-2xl font-cairo font-bold text-accent mb-2">Iron Will Forged</h3>
+                    <p class="text-text-secondary mb-6">Through 100 days of unwavering dedication, you have forged an unbreakable spirit. Each dawn brought new challenges, each sunset witnessed your triumph over weakness. Your consistency has become legendary.</p>
+                    
+                    <div class="bg-surface-light rounded-lg p-4 mb-6">
+                        <div class="grid grid-cols-2 gap-4 text-center">
+                            <div>
+                                <div class="text-2xl font-bold text-accent">+2,500</div>
+                                <div class="text-xs text-text-muted">Experience Points</div>
+                            </div>
+                            <div>
+                                <div class="text-2xl font-bold text-secondary">+5</div>
+                                <div class="text-xs text-text-muted">All Attributes</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button onclick="closeModal()" class="w-full bg-secondary text-white py-3 rounded-lg font-medium hover:bg-secondary-600 transition-colors">
+                        Continue Your Journey
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Navigation (Hidden on desktop) -->
+    <nav class="md:hidden fixed bottom-0 left-0 right-0 bg-surface/90 backdrop-blur-md border-t border-white/10 z-40">
+        <div class="grid grid-cols-5 gap-1 p-2">
+            <a href="main_dashboard.html" class="flex flex-col items-center py-2 text-text-secondary">
+                <svg class="w-5 h-5 mb-1" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/>
+                </svg>
+                <span class="text-xs">Dashboard</span>
+            </a>
+            <a href="profile_setup.html" class="flex flex-col items-center py-2 text-text-secondary">
+                <svg class="w-5 h-5 mb-1" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                </svg>
+                <span class="text-xs">Profile</span>
+            </a>
+            <a href="detective_academy.html" class="flex flex-col items-center py-2 text-text-secondary">
+                <svg class="w-5 h-5 mb-1" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                </svg>
+                <span class="text-xs">Detective</span>
+            </a>
+            <a href="progress_analytics.html" class="flex flex-col items-center py-2 text-text-secondary">
+                <svg class="w-5 h-5 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                </svg>
+                <span class="text-xs">Analytics</span>
+            </a>
+            <a href="achievement_gallery.html" class="flex flex-col items-center py-2 text-secondary">
+                <svg class="w-5 h-5 mb-1" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+                <span class="text-xs">Achievements</span>
+            </a>
+        </div>
+    </nav>
+
+    <script>
+        // Category filtering functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const categoryButtons = document.querySelectorAll('[data-category]');
+            const achievementCards = document.querySelectorAll('.card[data-category]');
+
+            categoryButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const category = this.getAttribute('data-category');
+                    
+                    // Update button states
+                    categoryButtons.forEach(btn => {
+                        btn.classList.remove('bg-secondary', 'text-white');
+                        btn.classList.add('bg-surface-light', 'text-text-secondary');
+                    });
+                    this.classList.remove('bg-surface-light', 'text-text-secondary');
+                    this.classList.add('bg-secondary', 'text-white');
+                    
+                    // Filter achievements
+                    achievementCards.forEach(card => {
+                        if (category === 'all' || card.getAttribute('data-category') === category) {
+                            card.style.display = 'block';
+                            card.classList.add('animate-smooth');
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // Achievement card click handlers
+            achievementCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    if (!this.classList.contains('opacity-50')) {
+                        openModal();
+                    }
+                });
+            });
+        });
+
+        // Modal functionality
+        function openModal() {
+            const modal = document.getElementById('achievement-modal');
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modal.querySelector('.transform').classList.remove('scale-95');
+                modal.querySelector('.transform').classList.add('scale-100');
+            }, 10);
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('achievement-modal');
+            modal.querySelector('.transform').classList.remove('scale-100');
+            modal.querySelector('.transform').classList.add('scale-95');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
+        }
+
+        // Particle effect for achievement hover (simplified)
+        document.addEventListener('DOMContentLoaded', function() {
+            const achievementCards = document.querySelectorAll('.achievement-glow');
+            
+            achievementCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'scale(1.05) rotateY(5deg)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'scale(1) rotateY(0deg)';
+                });
+            });
+        });
+
+        // Smooth scroll for mobile
+        if (window.innerWidth <= 768) {
+            document.body.style.paddingBottom = '80px';
+        }
+    </script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>
